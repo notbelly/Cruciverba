@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Cruciverba · Italian Verbs</title>
+<style>
+:root{--bg:#faf7f2;--fg:#1d1b18;--mut:#6b655c;--cell:#fff;--blk:#1d1b18;--line:#cfc7ba;--sel:#ffd966;--word:#fff0bf;--acc:#2f7d4f;--bad:#c8443a;--key:#e8e2d6;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#16140f;--fg:#f1ece2;--mut:#a39b8c;--cell:#26231c;--blk:#0c0b08;--line:#4a453a;--sel:#b8891a;--word:#4a3f1c;--key:#3a362c;--acc:#5fbf86;--bad:#e2685d;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#16140f;--fg:#f1ece2;--mut:#a39b8c;--cell:#26231c;--blk:#0c0b08;--line:#4a453a;--sel:#b8891a;--word:#4a3f1c;--key:#3a362c;--acc:#5fbf86;--bad:#e2685d;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.4 -apple-system,system-ui,"Segoe UI",sans-serif;-webkit-tap-highlight-color:transparent}
+main{max-width:560px;margin:0 auto;padding:12px 12px 0}
+header{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+h1{font:700 22px Georgia,serif;margin:0}
+.meta{color:var(--mut);font-size:13px;text-align:right}
+#grid{display:grid;gap:2px;margin:12px auto;width:100%;background:var(--bg)}
+#grid div{aspect-ratio:1;position:relative;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:clamp(14px,5vw,22px);text-transform:uppercase}
+#grid .b{background:transparent}
+#grid .c{background:var(--cell);border:1px solid var(--line);border-radius:3px;cursor:pointer;user-select:none}
+#grid .w{background:var(--word)}
+#grid .s{background:var(--sel)}
+#grid .ok{color:var(--acc)}
+#grid i{position:absolute;top:1px;left:3px;font:600 9px/1 sans-serif;color:var(--mut)}
+.dock{position:sticky;bottom:0;background:var(--bg);padding:8px 0 10px;border-top:1px solid var(--line)}
+#bar{min-height:40px;font-weight:600;margin-bottom:6px}
+#bar span{color:var(--mut);font-weight:700;margin-right:6px}
+.row{display:flex;gap:4px;justify-content:center;margin-bottom:4px}
+.row button{flex:1;max-width:42px;height:42px;border:0;border-radius:6px;background:var(--key);color:var(--fg);font:600 17px sans-serif;touch-action:manipulation}
+.tools{display:flex;gap:8px;margin-bottom:8px}
+.tools button{flex:1;height:38px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--fg);font:600 14px sans-serif}
+#msg{text-align:center;color:var(--acc);font-weight:700;min-height:20px;margin:0 0 6px}
+h2{font:700 15px sans-serif;margin:18px 0 6px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em}
+ol{list-style:none;margin:0;padding:0}
+li{padding:7px 8px;border-radius:6px;cursor:pointer}
+li b{display:inline-block;min-width:26px}
+li.on{background:var(--word)}
+footer{height:24px}
+</style></head>
+<body><main>
+<header><h1>Cruciverba</h1><div class="meta"><div id="date"></div><div id="streak"></div></div></header>
+<p style="margin:4px 0 0;color:var(--mut);font-size:14px">Fill in the Italian infinitive for each English clue.</p>
+<div id="grid"></div>
+<div class="dock">
+<p id="msg"></p>
+<div id="bar"></div>
+<div class="tools"><button id="hint">Hint</button></div>
+<div id="kb"></div>
+</div>
+<h2>Across</h2><ol id="la"></ol>
+<h2>Down</h2><ol id="ld"></ol>
+<footer></footer>
+</main>
+<script>
+/* Word bank: kept as plain data so it can move to a JSON file / Swift later */
+const WORDS=[
+{"word":"essere","clue":"To be"},{"word":"avere","clue":"To have"},{"word":"fare","clue":"To do or make"},{"word":"dire","clue":"To say"},{"word":"potere","clue":"Can; to be able to"},{"word":"dare","clue":"To give"},{"word":"stare","clue":"To stay or be (state/health)"},{"word":"dovere","clue":"Must; to have to"},{"word":"andare","clue":"To go"},{"word":"venire","clue":"To come"},{"word":"sapere","clue":"To know (a fact)"},{"word":"vedere","clue":"To see"},{"word":"trovare","clue":"To find"},{"word":"parlare","clue":"To speak"},{"word":"arrivare","clue":"To arrive"},{"word":"credere","clue":"To believe"},{"word":"mettere","clue":"To put"},{"word":"tenere","clue":"To keep"},{"word":"pensare","clue":"To think"},{"word":"passare","clue":"To pass or spend (time)"},{"word":"lasciare","clue":"To leave behind; to let"},{"word":"tornare","clue":"To return"},{"word":"prendere","clue":"To take"},{"word":"seguire","clue":"To follow"},{"word":"sentire","clue":"To hear or feel"},{"word":"vivere","clue":"To live"},{"word":"guardare","clue":"To watch or look at"},{"word":"mangiare","clue":"To eat"},{"word":"dormire","clue":"To sleep"},{"word":"capire","clue":"To understand"},{"word":"aprire","clue":"To open"},{"word":"chiudere","clue":"To close"},{"word":"entrare","clue":"To enter"},{"word":"uscire","clue":"To go out"},{"word":"rimanere","clue":"To remain"},{"word":"portare","clue":"To bring or wear"},{"word":"giocare","clue":"To play (a game)"},{"word":"lavorare","clue":"To work"},{"word":"studiare","clue":"To study"},{"word":"imparare","clue":"To learn"},{"word":"comprare","clue":"To buy"},{"word":"vendere","clue":"To sell"},{"word":"guidare","clue":"To drive"},{"word":"correre","clue":"To run"},{"word":"camminare","clue":"To walk"},{"word":"sedere","clue":"To sit"},{"word":"alzare","clue":"To raise or lift"},{"word":"cadere","clue":"To fall"},{"word":"restare","clue":"To stay behind"},{"word":"leggere","clue":"To read"},{"word":"scrivere","clue":"To write"},{"word":"bere","clue":"To drink"},{"word":"cucinare","clue":"To cook"},{"word":"volere","clue":"To want"},{"word":"piacere","clue":"To like; to be pleasing"},{"word":"chiedere","clue":"To ask"},{"word":"rispondere","clue":"To answer"},{"word":"aspettare","clue":"To wait"},{"word":"incontrare","clue":"To meet"},{"word":"perdere","clue":"To lose"},{"word":"partire","clue":"To leave or depart"},{"word":"finire","clue":"To finish"},{"word":"iniziare","clue":"To begin"},{"word":"salire","clue":"To go up"},{"word":"scendere","clue":"To go down"},{"word":"togliere","clue":"To remove"},{"word":"ricevere","clue":"To receive"},{"word":"pagare","clue":"To pay"},{"word":"cercare","clue":"To look for"},{"word":"ricordare","clue":"To remember"},{"word":"dimenticare","clue":"To forget"},{"word":"usare","clue":"To use"},{"word":"servire","clue":"To serve or be needed"},{"word":"sembrare","clue":"To seem"},{"word":"diventare","clue":"To become"},{"word":"nascere","clue":"To be born"},{"word":"morire","clue":"To die"},{"word":"viaggiare","clue":"To travel"},{"word":"sperare","clue":"To hope"},{"word":"temere","clue":"To fear"},{"word":"amare","clue":"To love"},{"word":"odiare","clue":"To hate"},{"word":"aiutare","clue":"To help"},{"word":"provare","clue":"To try"},{"word":"conoscere","clue":"To know (a person or place)"},{"word":"decidere","clue":"To decide"},{"word":"chiamare","clue":"To call"},{"word":"vincere","clue":"To win"},{"word":"ridere","clue":"To laugh"},{"word":"piangere","clue":"To cry"},{"word":"cantare","clue":"To sing"},{"word":"ballare","clue":"To dance"},{"word":"nuotare","clue":"To swim"},{"word":"scegliere","clue":"To choose"},{"word":"spiegare","clue":"To explain"},{"word":"offrire","clue":"To offer"},{"word":"cambiare","clue":"To change"},{"word":"ascoltare","clue":"To listen"},{"word":"spendere","clue":"To spend (money)"},{"word":"volare","clue":"To fly"}
+].map(x=>({word:x.word.toUpperCase(),clue:x.clue}));
+
+/* Seeded RNG (mulberry32) so the same date always gives the same puzzle */
+function hash(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
+function rng(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+
+/* Generator: returns {entries, cells} for a given date key */
+function generate(key){
+  const R=rng(hash(key)),N=44;
+  const shuffle=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(R()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+  const pool=shuffle(WORDS).slice(0,24);
+  let best=null;
+  for(let t=0;t<200;t++){
+    const g=Array.from({length:N},()=>Array(N).fill("")),dm=Array.from({length:N},()=>Array(N).fill(0)),placed=[];
+    const put=(o,r,c,d)=>{for(let i=0;i<o.word.length;i++){const rr=r+(d?i:0),cc=c+(d?0:i);g[rr][cc]=o.word[i];dm[rr][cc]|=1<<d}placed.push({...o,r,c,d})};
+    const chk=(w,r,c,d)=>{const dr=d,dc=1-d,L=w.length;
+      if(r<2||c<2||r+dr*L>N-2||c+dc*L>N-2)return -1;
+      if(g[r-dr][c-dc]||g[r+dr*L][c+dc*L])return -1;
+      let x=0;
+      for(let i=0;i<L;i++){const rr=r+dr*i,cc=c+dc*i,v=g[rr][cc];
+        if(v){if(v!==w[i]||(dm[rr][cc]&(1<<d)))return -1;x++}
+        else if(g[rr+dc][cc+dr]||g[rr-dc][cc-dr])return -1}
+      return x};
+    const order=shuffle(pool);
+    const first=order.reduce((a,b)=>b.word.length>a.word.length&&R()<.6?b:a);
+    put(first,N>>1,(N>>1)-(first.word.length>>1),0);
+    for(const o of order){
+      if(placed.length>=13)break;
+      if(placed.some(p=>p.word===o.word))continue;
+      const cand=[];let mx=0;
+      for(const p of placed)for(let i=0;i<p.word.length;i++)for(let j=0;j<o.word.length;j++){
+        if(p.word[i]!==o.word[j])continue;
+        const nd=1-p.d,r=p.r+(p.d?i:0)-(nd?j:0),c=p.c+(p.d?0:i)-(nd?0:j),x=chk(o.word,r,c,nd);
+        if(x>0){if(x>mx){mx=x;cand.length=0}if(x===mx)cand.push({r,c,d:nd})}}
+      if(cand.length){const p=cand[Math.floor(R()*cand.length)];put(o,p.r,p.c,p.d)}
+    }
+    if(!best||placed.length>best.length)best=placed;
+    if(best.length>=12)break;
+  }
+  const r0=Math.min(...best.map(p=>p.r)),c0=Math.min(...best.map(p=>p.c));
+  const cells={},starts={};
+  let H=0,W=0;
+  for(const p of best){p.r-=r0;p.c-=c0;p.cells=[];
+    for(let i=0;i<p.word.length;i++){const r=p.r+(p.d?i:0),c=p.c+(p.d?0:i),k=r+","+c;
+      cells[k]=cells[k]||{ans:p.word[i],val:"",r,c};p.cells.push(k);H=Math.max(H,r+1);W=Math.max(W,c+1)}}
+  best.sort((a,b)=>a.r-b.r||a.c-b.c);
+  let n=0;
+  for(const p of best){const k=p.r+","+p.c;if(!starts[k])starts[k]=++n;p.num=starts[k];cells[k].num=p.num}
+  return{entries:best,cells,H,W};
+}
+
+/* App */
+const $=id=>document.getElementById(id);
+const fmt=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const today=new Date(),KEY=fmt(today);
+const {entries,cells,H,W}=generate(KEY);
+const wordAt={};
+entries.forEach((e,i)=>e.cells.forEach(k=>{(wordAt[k]=wordAt[k]||[])[e.d]=i}));
+let sel=entries[0].cells[0],dir=entries[0].d,bad=new Set();
+
+function store(k,v){try{if(v===undefined){const s=localStorage.getItem(k);return s?JSON.parse(s):null}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
+const prog=store("cv-prog-"+KEY);
+if(prog)for(const k in prog)if(cells[k])cells[k].val=prog[k];
+const save=()=>{const o={};for(const k in cells)if(cells[k].val)o[k]=cells[k].val;store("cv-prog-"+KEY,o)};
+
+const cur=()=>{const i=wordAt[sel][dir];return i==null?null:entries[i]};
+function pick(k){
+  if(sel===k){if(wordAt[k][1-dir]!=null)dir=1-dir}
+  else{sel=k;if(wordAt[k][dir]==null)dir=1-dir}
+  render();
+}
+/* A word is locked (green, untouchable) once every letter is right. Wrong letters are never flagged. */
+const locked=()=>{const s=new Set();entries.forEach(e=>{if(e.cells.every(k=>cells[k].val===cells[k].ans))e.cells.forEach(k=>s.add(k))});return s};
+function type(ch){
+  const e=cur();
+  if(!locked().has(sel))cells[sel].val=ch;
+  const L=locked();
+  let i=e.cells.indexOf(sel)+1;
+  while(i<e.cells.length&&L.has(e.cells[i]))i++;
+  if(i<e.cells.length)sel=e.cells[i];
+  save();render();win();
+}
+function back(){
+  const e=cur(),L=locked();let i=e.cells.indexOf(sel);
+  if(!L.has(sel)&&cells[sel].val){cells[sel].val=""}
+  else{i--;while(i>=0&&L.has(e.cells[i]))i--;if(i>=0){sel=e.cells[i];cells[sel].val=""}}
+  save();render();
+}
+function win(){
+  if(!Object.values(cells).every(c=>c.val===c.ans))return;
+  $("msg").textContent="Complete! Bravo!";
+  const s=store("cv-streak")||{last:"",n:0};
+  if(s.last!==KEY){
+    const y=new Date(today.getFullYear(),today.getMonth(),today.getDate()-1);
+    s.n=s.last===fmt(y)?s.n+1:1;s.last=KEY;store("cv-streak",s);
+  }
+  showStreak();
+}
+function showStreak(){const s=store("cv-streak");$("streak").textContent=s&&s.n?"Streak: "+s.n+" day"+(s.n>1?"s":""):""}
+
+function render(){
+  const g=$("grid");
+  g.style.gridTemplateColumns="repeat("+W+",1fr)";
+  g.style.maxWidth=Math.min(W*48,560)+"px";
+  g.innerHTML="";
+  const e=cur(),L=locked();
+  for(let r=0;r<H;r++)for(let c=0;c<W;c++){
+    const k=r+","+c,cell=cells[k],d=document.createElement("div");
+    if(!cell){d.className="b"}
+    else{
+      d.className="c"+(sel===k?" s":e&&e.cells.includes(k)?" w":"")+(L.has(k)?" ok":"");
+      d.innerHTML=(cell.num?"<i>"+cell.num+"</i>":"")+cell.val;
+      d.onclick=()=>pick(k);
+    }
+    g.append(d);
+  }
+  $("bar").innerHTML=e?"<span>"+e.num+(e.d?" Down":" Across")+"</span>"+e.clue:"";
+  entries.forEach((x,i)=>{const li=document.getElementById("e"+i);if(li)li.className=x===e?"on":""});
+}
+function lists(){
+  entries.forEach((x,i)=>{
+    const li=document.createElement("li");li.id="e"+i;
+    li.innerHTML="<b>"+x.num+".</b>"+x.clue;
+    li.onclick=()=>{sel=x.cells[0];dir=x.d;render();window.scrollTo({top:0,behavior:"smooth"})};
+    $(x.d?"ld":"la").append(li);
+  });
+}
+function keyboard(){
+  const kb=$("kb");
+  ["QWERTYUIOP","ASDFGHJKL","ZXCVBNM⌫"].forEach(row=>{
+    const d=document.createElement("div");d.className="row";
+    for(const ch of row){
+      const b=document.createElement("button");b.textContent=ch;
+      b.onclick=()=>ch==="⌫"?back():type(ch);
+      d.append(b);
+    }
+    kb.append(d);
+  });
+}
+$("hint").onclick=()=>{
+  const e=cur();if(!e)return;
+  const k=e.cells.find(k=>cells[k].val!==cells[k].ans);
+  if(!k)return;
+  cells[k].val=cells[k].ans;sel=k;
+  $("msg").textContent="";
+  save();render();win();
+};
+document.addEventListener("keydown",ev=>{
+  if(ev.metaKey||ev.ctrlKey||ev.altKey)return;
+  if(/^[a-zA-Z]$/.test(ev.key))type(ev.key.toUpperCase());
+  else if(ev.key==="Backspace")back();
+});
+$("date").textContent=today.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"});
+showStreak();lists();keyboard();render();
+</script>
+</body></html>
