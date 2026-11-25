@@ -40,21 +40,98 @@ ol{list-style:none;margin:0;padding:0}
 li{padding:7px 8px;border-radius:6px;cursor:pointer}
 li b{display:inline-block;min-width:26px}
 li.on{background:var(--word)}
+[hidden]{display:none!important}
+#back,#sback{border:0;background:none;color:var(--fg);font:600 15px sans-serif;padding:4px 0}
+.hd{display:flex;align-items:center;gap:12px;margin:4px 0 14px}
+.av{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--cell);font-size:28px;padding:0}
+#hello{font:700 20px Georgia,serif}
+.mut{color:var(--mut);font-size:13px}
+.stats{display:flex;gap:8px;margin-bottom:12px}
+.stats div{flex:1;background:var(--cell);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.stats b{display:block;font-size:22px}
+.stats span{font-size:12px;color:var(--mut)}
+.feat{width:100%;border:0;border-radius:14px;padding:16px;background:var(--acc);color:var(--bg);font:700 16px sans-serif;text-align:left}
+.feat:disabled{opacity:.7}
+#cards{display:flex;flex-direction:column;gap:8px}
+.card{display:flex;align-items:center;gap:12px;width:100%;text-align:left;border:1px solid var(--line);background:var(--cell);color:var(--fg);border-radius:14px;padding:10px 12px;font-family:inherit}
+.card .ic{flex:none;width:48px;height:48px;border-radius:12px;background:var(--word);display:flex;align-items:center;justify-content:center;font:700 13px sans-serif}
+.card .tx{flex:1}
+.card .tx b{display:block;font-size:15px}
+.card small{color:var(--mut);font-size:13px}
+.card .stt{font:700 13px sans-serif;color:var(--acc)}
+.card.new .stt{color:var(--fg)}
+#prof{background:var(--cell);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:12px}
+#prof input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-size:16px;margin-bottom:8px}
+#avs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+#avs button{width:40px;height:40px;font-size:22px;border:1px solid var(--line);border-radius:10px;background:transparent;padding:0}
+#avs .on{background:var(--sel)}
+#psave{padding:8px 16px;border:0;border-radius:8px;background:var(--acc);color:var(--bg);font-weight:700}
+.ch{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.ch b{flex:1;text-align:center}
+.ch button{border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:8px;padding:6px 10px;font-weight:600}
+.ch button:disabled{opacity:.3}
+.cg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.cg i{font:600 12px sans-serif;color:var(--mut);font-style:normal}
+.cg .d{aspect-ratio:1;border:1px solid var(--line);border-radius:8px;background:var(--cell);color:var(--fg);font:600 14px sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0}
+.cg .d small{font-size:9px;color:var(--mut)}
+.cg .d:disabled{opacity:.3}
+.cg .part{background:var(--word)}
+.cg .full{background:var(--acc);color:var(--bg)}
+.cg .full small{color:var(--bg)}
+.cg .td{border-color:var(--acc);border-width:2px}
+.cg .sel{outline:2px solid var(--fg);outline-offset:1px}
+.unit{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--cell);border-radius:14px;padding:10px 12px;margin-bottom:8px}
+.unit.lock{opacity:.6}
+.unit .ut{flex:1;min-width:0}
+.unit .ut b{font-size:14px}
+.unit small{display:block;color:var(--mut);font-size:12px}
+.unit i{display:block;height:6px;background:var(--line);border-radius:3px;margin-top:6px;overflow:hidden}
+.unit i span{display:block;height:100%;background:var(--acc)}
+.unit button{padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--fg);font:600 13px sans-serif}
+.unit button:disabled{opacity:.45}
+.sl{margin:14px 0;font-size:18px;line-height:1.9}
+.wd{border:0;background:none;color:var(--fg);font:inherit;padding:0 1px;cursor:pointer}
+.wd.nw{border-bottom:2px dotted var(--mut)}
+.tr{display:block;color:var(--mut);font-size:14px;line-height:1.4}
+#sgloss{position:sticky;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:12px 0;font-weight:600}
+#strans{padding:8px 14px;border:1px solid var(--line);border-radius:8px;background:transparent;color:var(--fg);font:600 14px sans-serif}
 footer{height:24px}
 </style></head>
 <body><main>
-<header><h1>Cruciverba</h1><div class="meta"><div id="date"></div><div id="streak"></div></div></header>
+<div id="home">
+<div class="hd"><button id="avatar" class="av">🙂</button><div><div id="hello"></div><div id="hdate" class="mut"></div></div></div>
+<div id="prof" hidden><input id="pname" maxlength="20" placeholder="Your name"><div id="avs"></div><button id="psave">Save</button><p class="mut">Your profile and progress are saved on this device only.</p></div>
+<div class="stats"><div><b id="st1">0</b><span>day streak</span></div><div><b id="st2">0</b><span>best streak</span></div><div><b id="st3">0</b><span>puzzles done</span></div></div>
+<button id="cont" class="feat"></button>
+<h2 id="dayh"></h2>
+<div id="cards"></div>
+<h2>Learn</h2><p id="lsum" class="mut" style="margin:0 0 8px"></p><div id="units"></div>
+<h2>Calendar</h2>
+<div id="cal"></div>
+<footer></footer>
+</div>
+<div id="play" hidden>
+<header><button id="back">‹ Home</button><h1>Cruciverba</h1><div class="meta"><div id="date"></div><div id="streak"></div></div></header>
 <p id="sub" style="margin:4px 0 0;color:var(--mut);font-size:14px"></p><div id="tabs"></div><p style="margin:8px 0 0;color:var(--mut);font-size:13px">Letters revealed with Hint are shown in red.</p>
 <div id="grid"></div>
 <div class="dock">
 <p id="msg"></p>
 <div id="bar"></div>
-<div class="tools"><button id="hint">Hint</button></div>
+<div class="tools"><button id="hint">Hint</button><button id="again" hidden>Next puzzle</button></div>
 <div id="kb"></div>
 </div>
 <h2>Across</h2><ol id="la"></ol>
 <h2>Down</h2><ol id="ld"></ol>
 <footer></footer>
+</div>
+<div id="story" hidden>
+<button id="sback">‹ Home</button>
+<h1 id="stitle" style="margin:8px 0 0"></h1><p id="sen" class="mut" style="margin:2px 0 8px"></p>
+<button id="strans">Show translation</button>
+<div id="slines"></div>
+<div id="sgloss">Tap any word to see its meaning.</div>
+<footer></footer>
+</div>
 </main>
 <script>
 /* Word bank: kept as plain data so it can move to a JSON file / Swift later */
@@ -116,25 +193,28 @@ function generate(key,list){
 const NAMES={inf:"Infinitive",0:"io",1:"tu",2:"lui/lei",3:"noi",4:"voi",5:"loro"};
 /* Section word list: the infinitives, or one conjugated person (0=io ... 5=loro), read from DATA */
 function listFor(m){
-  if(m==="inf")return DATA.map(x=>({word:x.word.toUpperCase(),clue:x.clue}));
-  return DATA.map(x=>({word:x.forms[m].answer.toUpperCase(),clue:x.forms[m].clue}));
+  if(isU(m))return unitList(+m.slice(1));
+  if(m==="inf")return DATA.map(x=>({word:x.word.toUpperCase(),clue:x.clue,id:"it.v."+x.word}));
+  return DATA.map(x=>({word:x.forms[m].answer.toUpperCase(),clue:x.forms[m].clue,id:"it.v."+x.word,form:PERS[m]}));
 }
 
 /* App */
 const $=id=>document.getElementById(id);
 const fmt=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
-const today=new Date(),KEY=fmt(today);
+const today=new Date(),TODAY=fmt(today);
+let KEY=TODAY;
 let mode="inf",entries,cells,H,W,wordAt,sel,dir,bad;
-const progKey=()=>"cv-prog-"+KEY+(mode==="inf"?"":"-"+mode);
+const progKey=()=>isU(mode)?"cv-prog-"+mode+"-"+rnd(mode):"cv-prog-"+KEY+(mode==="inf"?"":"-"+mode);
 function load(m){
   mode=m;
-  ({entries,cells,H,W}=generate(m==="inf"?KEY:KEY+"|"+m,listFor(m)));
+  ({entries,cells,H,W}=generate(seedOf(m),listFor(m)));
   wordAt={};
   entries.forEach((e,i)=>e.cells.forEach(k=>{(wordAt[k]=wordAt[k]||[])[e.d]=i}));
   sel=entries[0].cells[0];dir=entries[0].d;bad=new Set();
   const prog=store(progKey());
   if(prog)for(const k in prog)if(cells[k]){cells[k].val=prog[k][0];cells[k].hint=prog[k].length>1}
-  $("sub").textContent=m==="inf"?"Fill in the Italian infinitive for each English clue.":"Write the present-tense form for the person shown. Use the accent keys where needed (è, dà, può).";
+  record();
+  $("sub").textContent=subText(m);$("tabs").hidden=isU(m);$("again").hidden=true;fin=false;
   $("msg").textContent="";
   tabs();lists();render();
 }
@@ -149,7 +229,7 @@ function tabs(){
 }
 
 function store(k,v){try{if(v===undefined){const s=localStorage.getItem(k);return s?JSON.parse(s):null}localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}}
-const save=()=>{const o={};for(const k in cells)if(cells[k].val)o[k]=cells[k].val+(cells[k].hint?"!":"");store(progKey(),o)};
+const save=()=>{const o={};for(const k in cells)if(cells[k].val)o[k]=cells[k].val+(cells[k].hint?"!":"");store(progKey(),o);record()};
 
 const cur=()=>{const i=wordAt[sel][dir];return i==null?null:entries[i]};
 function pick(k){
@@ -189,17 +269,19 @@ function back(){
 function win(){
   if(!Object.values(cells).every(c=>c.val===c.ans))return;
   $("msg").textContent="Complete! Bravo!";
+  if(isU(mode)){unitDone();return}
   const dn=store("cv-done-"+KEY)||[];
   if(!dn.includes(mode)){dn.push(mode);store("cv-done-"+KEY,dn)}
   tabs();
   const s=store("cv-streak")||{last:"",n:0};
-  if(s.last!==KEY){
+  if(KEY===TODAY&&s.last!==KEY){
     const y=new Date(today.getFullYear(),today.getMonth(),today.getDate()-1);
-    s.n=s.last===fmt(y)?s.n+1:1;s.last=KEY;store("cv-streak",s);
+    s.n=s.last===fmt(y)?s.n+1:1;s.best=Math.max(s.best||0,s.n);s.last=KEY;store("cv-streak",s);
   }
   showStreak();
 }
-function showStreak(){const s=store("cv-streak");$("streak").textContent=s&&s.n?"Streak: "+s.n+" day"+(s.n>1?"s":""):""}
+function liveStreak(){const s=store("cv-streak");if(!s)return 0;const y=new Date(today.getFullYear(),today.getMonth(),today.getDate()-1);return s.last===TODAY||s.last===fmt(y)?s.n:0}
+function showStreak(){const n=liveStreak();$("streak").textContent=n?"Streak: "+n+" day"+(n>1?"s":""):""}
 
 function render(){
   const g=$("grid");
@@ -251,11 +333,170 @@ $("hint").onclick=()=>{
   save();render();win();
 };
 document.addEventListener("keydown",ev=>{
-  if(ev.metaKey||ev.ctrlKey||ev.altKey)return;
+  if(ev.metaKey||ev.ctrlKey||ev.altKey||$("play").hidden||document.activeElement.tagName==="INPUT")return;
   if(/^[a-zA-ZàèéìòùÀÈÌÒÙ]$/.test(ev.key))type(ev.key.toUpperCase());
   else if(ev.key==="Backspace")back();
 });
-$("date").textContent=today.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"});
-Promise.resolve().then(()=>fetch("italian_verbs.json")).then(r=>r.ok?r.json():null).then(d=>{if(valid(d))DATA=d}).catch(()=>{}).then(()=>{showStreak();keyboard();load("inf")});
+/* ---- Units, word tracking, stories (data: content/it/*.json, embedded copy as fallback) ---- */
+const CONTENT_EMBED={"lex":[{"id":"it.intj.ciao","lemma":"ciao","pos":"intj","gloss":"hi; bye (informal)","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.buongiorno","lemma":"buongiorno","pos":"intj","gloss":"good morning; hello (daytime)","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.buonasera","lemma":"buonasera","pos":"intj","gloss":"good evening","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.arrivederci","lemma":"arrivederci","pos":"intj","gloss":"goodbye","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.grazie","lemma":"grazie","pos":"intj","gloss":"thank you","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.prego","lemma":"prego","pos":"intj","gloss":"you're welcome","tier":"support","unit":0,"puzzle":true},{"id":"it.phr.per_favore","lemma":"per favore","pos":"phr","gloss":"please","tier":"support","unit":0,"puzzle":false},{"id":"it.intj.scusa","lemma":"scusa","pos":"intj","gloss":"excuse me; sorry (informal)","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.si","lemma":"sì","pos":"intj","gloss":"yes","tier":"support","unit":0,"puzzle":true},{"id":"it.intj.no","lemma":"no","pos":"intj","gloss":"no","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.io","lemma":"io","pos":"pron","gloss":"I","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.tu","lemma":"tu","pos":"pron","gloss":"you (one person, informal)","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.lui","lemma":"lui","pos":"pron","gloss":"he","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.lei","lemma":"lei","pos":"pron","gloss":"she (also formal 'you')","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.noi","lemma":"noi","pos":"pron","gloss":"we","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.voi","lemma":"voi","pos":"pron","gloss":"you (more than one person)","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.loro","lemma":"loro","pos":"pron","gloss":"they","tier":"support","unit":0,"puzzle":true},{"id":"it.conj.e","lemma":"e","pos":"conj","gloss":"and","tier":"support","unit":0,"puzzle":true},{"id":"it.conj.ma","lemma":"ma","pos":"conj","gloss":"but","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.non","lemma":"non","pos":"adv","gloss":"not","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.anche","lemma":"anche","pos":"adv","gloss":"also; too","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.molto","lemma":"molto","pos":"adv","gloss":"very; a lot","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.bene","lemma":"bene","pos":"adv","gloss":"well; fine","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.come","lemma":"come","pos":"adv","gloss":"how; like","tier":"support","unit":0,"puzzle":true},{"id":"it.adv.dove","lemma":"dove","pos":"adv","gloss":"where","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.chi","lemma":"chi","pos":"pron","gloss":"who","tier":"support","unit":0,"puzzle":true},{"id":"it.pron.cosa","lemma":"cosa","pos":"pron","gloss":"what","tier":"support","unit":0,"puzzle":true},{"id":"it.art.il","lemma":"il","pos":"art","gloss":"the (masculine, singular)","tier":"support","unit":0,"puzzle":true},{"id":"it.art.la","lemma":"la","pos":"art","gloss":"the (feminine, singular)","tier":"support","unit":0,"puzzle":true},{"id":"it.art.un","lemma":"un","pos":"art","gloss":"a; an (masculine)","tier":"support","unit":0,"puzzle":true},{"id":"it.art.una","lemma":"una","pos":"art","gloss":"a; an (feminine)","tier":"support","unit":0,"puzzle":true},{"id":"it.v.essere","lemma":"essere","pos":"v","gloss":"to be","tier":"core","unit":1,"forms":{"pres.1sg":"sono","pres.2sg":"sei","pres.3sg":"è","pres.1pl":"siamo","pres.2pl":"siete","pres.3pl":"sono"}},{"id":"it.v.avere","lemma":"avere","pos":"v","gloss":"to have","tier":"core","unit":1,"forms":{"pres.1sg":"ho","pres.2sg":"hai","pres.3sg":"ha","pres.1pl":"abbiamo","pres.2pl":"avete","pres.3pl":"hanno"}},{"id":"it.v.stare","lemma":"stare","pos":"v","gloss":"to stay or be (state/health)","tier":"core","unit":1,"forms":{"pres.1sg":"sto","pres.2sg":"stai","pres.3sg":"sta","pres.1pl":"stiamo","pres.2pl":"state","pres.3pl":"stanno"}},{"id":"it.v.andare","lemma":"andare","pos":"v","gloss":"to go","tier":"core","unit":1,"forms":{"pres.1sg":"vado","pres.2sg":"vai","pres.3sg":"va","pres.1pl":"andiamo","pres.2pl":"andate","pres.3pl":"vanno"}},{"id":"it.v.venire","lemma":"venire","pos":"v","gloss":"to come","tier":"core","unit":1,"forms":{"pres.1sg":"vengo","pres.2sg":"vieni","pres.3sg":"viene","pres.1pl":"veniamo","pres.2pl":"venite","pres.3pl":"vengono"}},{"id":"it.v.fare","lemma":"fare","pos":"v","gloss":"to do or make","tier":"core","unit":1,"forms":{"pres.1sg":"faccio","pres.2sg":"fai","pres.3sg":"fa","pres.1pl":"facciamo","pres.2pl":"fate","pres.3pl":"fanno"}},{"id":"it.v.volere","lemma":"volere","pos":"v","gloss":"to want","tier":"core","unit":1,"forms":{"pres.1sg":"voglio","pres.2sg":"vuoi","pres.3sg":"vuole","pres.1pl":"vogliamo","pres.2pl":"volete","pres.3pl":"vogliono"}},{"id":"it.v.potere","lemma":"potere","pos":"v","gloss":"can; to be able to","tier":"core","unit":1,"forms":{"pres.1sg":"posso","pres.2sg":"puoi","pres.3sg":"può","pres.1pl":"possiamo","pres.2pl":"potete","pres.3pl":"possono"}},{"id":"it.v.dovere","lemma":"dovere","pos":"v","gloss":"must; to have to","tier":"core","unit":1,"forms":{"pres.1sg":"devo","pres.2sg":"devi","pres.3sg":"deve","pres.1pl":"dobbiamo","pres.2pl":"dovete","pres.3pl":"devono"}},{"id":"it.v.dire","lemma":"dire","pos":"v","gloss":"to say","tier":"core","unit":1,"forms":{"pres.1sg":"dico","pres.2sg":"dici","pres.3sg":"dice","pres.1pl":"diciamo","pres.2pl":"dite","pres.3pl":"dicono"}},{"id":"it.prep.di","lemma":"di","pos":"prep","gloss":"of; from","tier":"core","unit":1,"draft_list":true,"forms":{"+il":"del","+lo":"dello","+la":"della","+l":"dell'","+i":"dei","+gli":"degli","+le":"delle"}},{"id":"it.prep.a","lemma":"a","pos":"prep","gloss":"to; at; in","tier":"core","unit":1,"draft_list":true,"forms":{"+il":"al","+lo":"allo","+la":"alla","+l":"all'","+i":"ai","+gli":"agli","+le":"alle"}},{"id":"it.n.caffe","lemma":"caffè","pos":"n","gloss":"coffee","tier":"support","unit":1,"puzzle":true,"gender":"m"},{"id":"it.n.bar","lemma":"bar","pos":"n","gloss":"bar; café","tier":"support","unit":1,"puzzle":true,"gender":"m"},{"id":"it.n.casa","lemma":"casa","pos":"n","gloss":"house; home","tier":"support","unit":1,"puzzle":true,"gender":"f"},{"id":"it.adv.oggi","lemma":"oggi","pos":"adv","gloss":"today","tier":"support","unit":1,"puzzle":true},{"id":"it.adv.qui","lemma":"qui","pos":"adv","gloss":"here","tier":"support","unit":1,"puzzle":true},{"id":"it.adv.adesso","lemma":"adesso","pos":"adv","gloss":"now","tier":"support","unit":1,"puzzle":true},{"id":"it.num.due","lemma":"due","pos":"num","gloss":"two","tier":"support","unit":1,"puzzle":true},{"id":"it.v.parlare","lemma":"parlare","pos":"v","gloss":"to speak","tier":"core","unit":2,"forms":{"pres.1sg":"parlo","pres.2sg":"parli","pres.3sg":"parla","pres.1pl":"parliamo","pres.2pl":"parlate","pres.3pl":"parlano"}},{"id":"it.v.chiamare","lemma":"chiamare","pos":"v","gloss":"to call","tier":"core","unit":2,"forms":{"pres.1sg":"chiamo","pres.2sg":"chiami","pres.3sg":"chiama","pres.1pl":"chiamiamo","pres.2pl":"chiamate","pres.3pl":"chiamano"}},{"id":"it.v.sapere","lemma":"sapere","pos":"v","gloss":"to know (a fact)","tier":"core","unit":2,"forms":{"pres.1sg":"so","pres.2sg":"sai","pres.3sg":"sa","pres.1pl":"sappiamo","pres.2pl":"sapete","pres.3pl":"sanno"}},{"id":"it.v.conoscere","lemma":"conoscere","pos":"v","gloss":"to know (a person or place)","tier":"core","unit":2,"forms":{"pres.1sg":"conosco","pres.2sg":"conosci","pres.3sg":"conosce","pres.1pl":"conosciamo","pres.2pl":"conoscete","pres.3pl":"conoscono"}},{"id":"it.v.capire","lemma":"capire","pos":"v","gloss":"to understand","tier":"core","unit":2,"forms":{"pres.1sg":"capisco","pres.2sg":"capisci","pres.3sg":"capisce","pres.1pl":"capiamo","pres.2pl":"capite","pres.3pl":"capiscono"}},{"id":"it.v.chiedere","lemma":"chiedere","pos":"v","gloss":"to ask","tier":"core","unit":2,"forms":{"pres.1sg":"chiedo","pres.2sg":"chiedi","pres.3sg":"chiede","pres.1pl":"chiediamo","pres.2pl":"chiedete","pres.3pl":"chiedono"}},{"id":"it.v.rispondere","lemma":"rispondere","pos":"v","gloss":"to answer","tier":"core","unit":2,"forms":{"pres.1sg":"rispondo","pres.2sg":"rispondi","pres.3sg":"risponde","pres.1pl":"rispondiamo","pres.2pl":"rispondete","pres.3pl":"rispondono"}},{"id":"it.v.spiegare","lemma":"spiegare","pos":"v","gloss":"to explain","tier":"core","unit":2,"forms":{"pres.1sg":"spiego","pres.2sg":"spieghi","pres.3sg":"spiega","pres.1pl":"spieghiamo","pres.2pl":"spiegate","pres.3pl":"spiegano"}},{"id":"it.v.ascoltare","lemma":"ascoltare","pos":"v","gloss":"to listen","tier":"core","unit":2,"forms":{"pres.1sg":"ascolto","pres.2sg":"ascolti","pres.3sg":"ascolta","pres.1pl":"ascoltiamo","pres.2pl":"ascoltate","pres.3pl":"ascoltano"}},{"id":"it.v.sentire","lemma":"sentire","pos":"v","gloss":"to hear or feel","tier":"core","unit":2,"forms":{"pres.1sg":"sento","pres.2sg":"senti","pres.3sg":"sente","pres.1pl":"sentiamo","pres.2pl":"sentite","pres.3pl":"sentono"}},{"id":"it.prep.in","lemma":"in","pos":"prep","gloss":"in; into","tier":"core","unit":2,"draft_list":true,"forms":{"+il":"nel","+lo":"nello","+la":"nella","+l":"nell'","+i":"nei","+gli":"negli","+le":"nelle"}},{"id":"it.prep.da","lemma":"da","pos":"prep","gloss":"from; by; at (someone's place)","tier":"core","unit":2,"draft_list":true,"forms":{"+il":"dal","+lo":"dallo","+la":"dalla","+l":"dall'","+i":"dai","+gli":"dagli","+le":"dalle"}},{"id":"it.art.lo","lemma":"lo","pos":"art","gloss":"the (masculine, singular; before s+consonant, z, gn)","tier":"support","unit":2,"puzzle":true},{"id":"it.art.i","lemma":"i","pos":"art","gloss":"the (masculine, plural)","tier":"support","unit":2,"puzzle":true},{"id":"it.art.gli","lemma":"gli","pos":"art","gloss":"the (masculine, plural; before vowels, s+consonant, z)","tier":"support","unit":2,"puzzle":true},{"id":"it.art.le","lemma":"le","pos":"art","gloss":"the (feminine, plural)","tier":"support","unit":2,"puzzle":true},{"id":"it.art.uno","lemma":"uno","pos":"art","gloss":"a; an (masculine; before s+consonant, z, gn)","tier":"support","unit":2,"puzzle":true},{"id":"it.v.vedere","lemma":"vedere","pos":"v","gloss":"to see","tier":"core","unit":3,"forms":{"pres.1sg":"vedo","pres.2sg":"vedi","pres.3sg":"vede","pres.1pl":"vediamo","pres.2pl":"vedete","pres.3pl":"vedono"}},{"id":"it.v.guardare","lemma":"guardare","pos":"v","gloss":"to watch or look at","tier":"core","unit":3,"forms":{"pres.1sg":"guardo","pres.2sg":"guardi","pres.3sg":"guarda","pres.1pl":"guardiamo","pres.2pl":"guardate","pres.3pl":"guardano"}},{"id":"it.v.pensare","lemma":"pensare","pos":"v","gloss":"to think","tier":"core","unit":3,"forms":{"pres.1sg":"penso","pres.2sg":"pensi","pres.3sg":"pensa","pres.1pl":"pensiamo","pres.2pl":"pensate","pres.3pl":"pensano"}},{"id":"it.v.credere","lemma":"credere","pos":"v","gloss":"to believe","tier":"core","unit":3,"forms":{"pres.1sg":"credo","pres.2sg":"credi","pres.3sg":"crede","pres.1pl":"crediamo","pres.2pl":"credete","pres.3pl":"credono"}},{"id":"it.v.dare","lemma":"dare","pos":"v","gloss":"to give","tier":"core","unit":3,"forms":{"pres.1sg":"do","pres.2sg":"dai","pres.3sg":"dà","pres.1pl":"diamo","pres.2pl":"date","pres.3pl":"danno"}},{"id":"it.v.prendere","lemma":"prendere","pos":"v","gloss":"to take","tier":"core","unit":3,"forms":{"pres.1sg":"prendo","pres.2sg":"prendi","pres.3sg":"prende","pres.1pl":"prendiamo","pres.2pl":"prendete","pres.3pl":"prendono"}},{"id":"it.v.trovare","lemma":"trovare","pos":"v","gloss":"to find","tier":"core","unit":3,"forms":{"pres.1sg":"trovo","pres.2sg":"trovi","pres.3sg":"trova","pres.1pl":"troviamo","pres.2pl":"trovate","pres.3pl":"trovano"}},{"id":"it.v.cercare","lemma":"cercare","pos":"v","gloss":"to look for","tier":"core","unit":3,"forms":{"pres.1sg":"cerco","pres.2sg":"cerchi","pres.3sg":"cerca","pres.1pl":"cerchiamo","pres.2pl":"cercate","pres.3pl":"cercano"}},{"id":"it.v.mettere","lemma":"mettere","pos":"v","gloss":"to put","tier":"core","unit":3,"forms":{"pres.1sg":"metto","pres.2sg":"metti","pres.3sg":"mette","pres.1pl":"mettiamo","pres.2pl":"mettete","pres.3pl":"mettono"}},{"id":"it.v.tenere","lemma":"tenere","pos":"v","gloss":"to keep","tier":"core","unit":3,"forms":{"pres.1sg":"tengo","pres.2sg":"tieni","pres.3sg":"tiene","pres.1pl":"teniamo","pres.2pl":"tenete","pres.3pl":"tengono"}},{"id":"it.prep.con","lemma":"con","pos":"prep","gloss":"with","tier":"core","unit":3,"draft_list":true},{"id":"it.prep.su","lemma":"su","pos":"prep","gloss":"on; about","tier":"core","unit":3,"draft_list":true,"forms":{"+il":"sul","+lo":"sullo","+la":"sulla","+l":"sull'","+i":"sui","+gli":"sugli","+le":"sulle"}},{"id":"it.v.arrivare","lemma":"arrivare","pos":"v","gloss":"to arrive","tier":"core","unit":4,"forms":{"pres.1sg":"arrivo","pres.2sg":"arrivi","pres.3sg":"arriva","pres.1pl":"arriviamo","pres.2pl":"arrivate","pres.3pl":"arrivano"}},{"id":"it.v.partire","lemma":"partire","pos":"v","gloss":"to leave or depart","tier":"core","unit":4,"forms":{"pres.1sg":"parto","pres.2sg":"parti","pres.3sg":"parte","pres.1pl":"partiamo","pres.2pl":"partite","pres.3pl":"partono"}},{"id":"it.v.tornare","lemma":"tornare","pos":"v","gloss":"to return","tier":"core","unit":4,"forms":{"pres.1sg":"torno","pres.2sg":"torni","pres.3sg":"torna","pres.1pl":"torniamo","pres.2pl":"tornate","pres.3pl":"tornano"}},{"id":"it.v.entrare","lemma":"entrare","pos":"v","gloss":"to enter","tier":"core","unit":4,"forms":{"pres.1sg":"entro","pres.2sg":"entri","pres.3sg":"entra","pres.1pl":"entriamo","pres.2pl":"entrate","pres.3pl":"entrano"}},{"id":"it.v.uscire","lemma":"uscire","pos":"v","gloss":"to go out","tier":"core","unit":4,"forms":{"pres.1sg":"esco","pres.2sg":"esci","pres.3sg":"esce","pres.1pl":"usciamo","pres.2pl":"uscite","pres.3pl":"escono"}},{"id":"it.v.camminare","lemma":"camminare","pos":"v","gloss":"to walk","tier":"core","unit":4,"forms":{"pres.1sg":"cammino","pres.2sg":"cammini","pres.3sg":"cammina","pres.1pl":"camminiamo","pres.2pl":"camminate","pres.3pl":"camminano"}},{"id":"it.v.guidare","lemma":"guidare","pos":"v","gloss":"to drive","tier":"core","unit":4,"forms":{"pres.1sg":"guido","pres.2sg":"guidi","pres.3sg":"guida","pres.1pl":"guidiamo","pres.2pl":"guidate","pres.3pl":"guidano"}},{"id":"it.v.viaggiare","lemma":"viaggiare","pos":"v","gloss":"to travel","tier":"core","unit":4,"forms":{"pres.1sg":"viaggio","pres.2sg":"viaggi","pres.3sg":"viaggia","pres.1pl":"viaggiamo","pres.2pl":"viaggiate","pres.3pl":"viaggiano"}},{"id":"it.v.salire","lemma":"salire","pos":"v","gloss":"to go up","tier":"core","unit":4,"forms":{"pres.1sg":"salgo","pres.2sg":"sali","pres.3sg":"sale","pres.1pl":"saliamo","pres.2pl":"salite","pres.3pl":"salgono"}},{"id":"it.v.scendere","lemma":"scendere","pos":"v","gloss":"to go down","tier":"core","unit":4,"forms":{"pres.1sg":"scendo","pres.2sg":"scendi","pres.3sg":"scende","pres.1pl":"scendiamo","pres.2pl":"scendete","pres.3pl":"scendono"}},{"id":"it.prep.per","lemma":"per","pos":"prep","gloss":"for; through","tier":"core","unit":4,"draft_list":true},{"id":"it.prep.tra","lemma":"tra","pos":"prep","gloss":"between; among; in (of time)","tier":"core","unit":4,"draft_list":true,"variants":["fra"]},{"id":"it.v.mangiare","lemma":"mangiare","pos":"v","gloss":"to eat","tier":"core","unit":5,"forms":{"pres.1sg":"mangio","pres.2sg":"mangi","pres.3sg":"mangia","pres.1pl":"mangiamo","pres.2pl":"mangiate","pres.3pl":"mangiano"}},{"id":"it.v.bere","lemma":"bere","pos":"v","gloss":"to drink","tier":"core","unit":5,"forms":{"pres.1sg":"bevo","pres.2sg":"bevi","pres.3sg":"beve","pres.1pl":"beviamo","pres.2pl":"bevete","pres.3pl":"bevono"}},{"id":"it.v.cucinare","lemma":"cucinare","pos":"v","gloss":"to cook","tier":"core","unit":5,"forms":{"pres.1sg":"cucino","pres.2sg":"cucini","pres.3sg":"cucina","pres.1pl":"cuciniamo","pres.2pl":"cucinate","pres.3pl":"cucinano"}},{"id":"it.v.dormire","lemma":"dormire","pos":"v","gloss":"to sleep","tier":"core","unit":5,"forms":{"pres.1sg":"dormo","pres.2sg":"dormi","pres.3sg":"dorme","pres.1pl":"dormiamo","pres.2pl":"dormite","pres.3pl":"dormono"}},{"id":"it.v.lavorare","lemma":"lavorare","pos":"v","gloss":"to work","tier":"core","unit":5,"forms":{"pres.1sg":"lavoro","pres.2sg":"lavori","pres.3sg":"lavora","pres.1pl":"lavoriamo","pres.2pl":"lavorate","pres.3pl":"lavorano"}},{"id":"it.v.studiare","lemma":"studiare","pos":"v","gloss":"to study","tier":"core","unit":5,"forms":{"pres.1sg":"studio","pres.2sg":"studi","pres.3sg":"studia","pres.1pl":"studiamo","pres.2pl":"studiate","pres.3pl":"studiano"}},{"id":"it.v.comprare","lemma":"comprare","pos":"v","gloss":"to buy","tier":"core","unit":5,"forms":{"pres.1sg":"compro","pres.2sg":"compri","pres.3sg":"compra","pres.1pl":"compriamo","pres.2pl":"comprate","pres.3pl":"comprano"}},{"id":"it.v.vendere","lemma":"vendere","pos":"v","gloss":"to sell","tier":"core","unit":5,"forms":{"pres.1sg":"vendo","pres.2sg":"vendi","pres.3sg":"vende","pres.1pl":"vendiamo","pres.2pl":"vendete","pres.3pl":"vendono"}},{"id":"it.v.pagare","lemma":"pagare","pos":"v","gloss":"to pay","tier":"core","unit":5,"forms":{"pres.1sg":"pago","pres.2sg":"paghi","pres.3sg":"paga","pres.1pl":"paghiamo","pres.2pl":"pagate","pres.3pl":"pagano"}},{"id":"it.v.spendere","lemma":"spendere","pos":"v","gloss":"to spend (money)","tier":"core","unit":5,"forms":{"pres.1sg":"spendo","pres.2sg":"spendi","pres.3sg":"spende","pres.1pl":"spendiamo","pres.2pl":"spendete","pres.3pl":"spendono"}},{"id":"it.prep.dopo","lemma":"dopo","pos":"prep","gloss":"after","tier":"core","unit":5,"draft_list":true},{"id":"it.prep.prima","lemma":"prima","pos":"prep","gloss":"before","tier":"core","unit":5,"draft_list":true},{"id":"it.v.aprire","lemma":"aprire","pos":"v","gloss":"to open","tier":"core","unit":6,"forms":{"pres.1sg":"apro","pres.2sg":"apri","pres.3sg":"apre","pres.1pl":"apriamo","pres.2pl":"aprite","pres.3pl":"aprono"}},{"id":"it.v.chiudere","lemma":"chiudere","pos":"v","gloss":"to close","tier":"core","unit":6,"forms":{"pres.1sg":"chiudo","pres.2sg":"chiudi","pres.3sg":"chiude","pres.1pl":"chiudiamo","pres.2pl":"chiudete","pres.3pl":"chiudono"}},{"id":"it.v.portare","lemma":"portare","pos":"v","gloss":"to bring or wear","tier":"core","unit":6,"forms":{"pres.1sg":"porto","pres.2sg":"porti","pres.3sg":"porta","pres.1pl":"portiamo","pres.2pl":"portate","pres.3pl":"portano"}},{"id":"it.v.alzare","lemma":"alzare","pos":"v","gloss":"to raise or lift","tier":"core","unit":6,"forms":{"pres.1sg":"alzo","pres.2sg":"alzi","pres.3sg":"alza","pres.1pl":"alziamo","pres.2pl":"alzate","pres.3pl":"alzano"}},{"id":"it.v.sedere","lemma":"sedere","pos":"v","gloss":"to sit","tier":"core","unit":6,"forms":{"pres.1sg":"siedo","pres.2sg":"siedi","pres.3sg":"siede","pres.1pl":"sediamo","pres.2pl":"sedete","pres.3pl":"siedono"}},{"id":"it.v.cadere","lemma":"cadere","pos":"v","gloss":"to fall","tier":"core","unit":6,"forms":{"pres.1sg":"cado","pres.2sg":"cadi","pres.3sg":"cade","pres.1pl":"cadiamo","pres.2pl":"cadete","pres.3pl":"cadono"}},{"id":"it.v.correre","lemma":"correre","pos":"v","gloss":"to run","tier":"core","unit":6,"forms":{"pres.1sg":"corro","pres.2sg":"corri","pres.3sg":"corre","pres.1pl":"corriamo","pres.2pl":"correte","pres.3pl":"corrono"}},{"id":"it.v.nuotare","lemma":"nuotare","pos":"v","gloss":"to swim","tier":"core","unit":6,"forms":{"pres.1sg":"nuoto","pres.2sg":"nuoti","pres.3sg":"nuota","pres.1pl":"nuotiamo","pres.2pl":"nuotate","pres.3pl":"nuotano"}},{"id":"it.v.volare","lemma":"volare","pos":"v","gloss":"to fly","tier":"core","unit":6,"forms":{"pres.1sg":"volo","pres.2sg":"voli","pres.3sg":"vola","pres.1pl":"voliamo","pres.2pl":"volate","pres.3pl":"volano"}},{"id":"it.v.giocare","lemma":"giocare","pos":"v","gloss":"to play (a game)","tier":"core","unit":6,"forms":{"pres.1sg":"gioco","pres.2sg":"giochi","pres.3sg":"gioca","pres.1pl":"giochiamo","pres.2pl":"giocate","pres.3pl":"giocano"}},{"id":"it.prep.sopra","lemma":"sopra","pos":"prep","gloss":"above; on top of","tier":"core","unit":6,"draft_list":true},{"id":"it.prep.sotto","lemma":"sotto","pos":"prep","gloss":"under; below","tier":"core","unit":6,"draft_list":true},{"id":"it.v.amare","lemma":"amare","pos":"v","gloss":"to love","tier":"core","unit":7,"forms":{"pres.1sg":"amo","pres.2sg":"ami","pres.3sg":"ama","pres.1pl":"amiamo","pres.2pl":"amate","pres.3pl":"amano"}},{"id":"it.v.odiare","lemma":"odiare","pos":"v","gloss":"to hate","tier":"core","unit":7,"forms":{"pres.1sg":"odio","pres.2sg":"odi","pres.3sg":"odia","pres.1pl":"odiamo","pres.2pl":"odiate","pres.3pl":"odiano"}},{"id":"it.v.piacere","lemma":"piacere","pos":"v","gloss":"to like; to be pleasing","tier":"core","unit":7,"forms":{"pres.1sg":"piaccio","pres.2sg":"piaci","pres.3sg":"piace","pres.1pl":"piacciamo","pres.2pl":"piacete","pres.3pl":"piacciono"}},{"id":"it.v.sperare","lemma":"sperare","pos":"v","gloss":"to hope","tier":"core","unit":7,"forms":{"pres.1sg":"spero","pres.2sg":"speri","pres.3sg":"spera","pres.1pl":"speriamo","pres.2pl":"sperate","pres.3pl":"sperano"}},{"id":"it.v.temere","lemma":"temere","pos":"v","gloss":"to fear","tier":"core","unit":7,"forms":{"pres.1sg":"temo","pres.2sg":"temi","pres.3sg":"teme","pres.1pl":"temiamo","pres.2pl":"temete","pres.3pl":"temono"}},{"id":"it.v.ridere","lemma":"ridere","pos":"v","gloss":"to laugh","tier":"core","unit":7,"forms":{"pres.1sg":"rido","pres.2sg":"ridi","pres.3sg":"ride","pres.1pl":"ridiamo","pres.2pl":"ridete","pres.3pl":"ridono"}},{"id":"it.v.piangere","lemma":"piangere","pos":"v","gloss":"to cry","tier":"core","unit":7,"forms":{"pres.1sg":"piango","pres.2sg":"piangi","pres.3sg":"piange","pres.1pl":"piangiamo","pres.2pl":"piangete","pres.3pl":"piangono"}},{"id":"it.v.provare","lemma":"provare","pos":"v","gloss":"to try","tier":"core","unit":7,"forms":{"pres.1sg":"provo","pres.2sg":"provi","pres.3sg":"prova","pres.1pl":"proviamo","pres.2pl":"provate","pres.3pl":"provano"}},{"id":"it.v.ricordare","lemma":"ricordare","pos":"v","gloss":"to remember","tier":"core","unit":7,"forms":{"pres.1sg":"ricordo","pres.2sg":"ricordi","pres.3sg":"ricorda","pres.1pl":"ricordiamo","pres.2pl":"ricordate","pres.3pl":"ricordano"}},{"id":"it.v.dimenticare","lemma":"dimenticare","pos":"v","gloss":"to forget","tier":"core","unit":7,"forms":{"pres.1sg":"dimentico","pres.2sg":"dimentichi","pres.3sg":"dimentica","pres.1pl":"dimentichiamo","pres.2pl":"dimenticate","pres.3pl":"dimenticano"}},{"id":"it.prep.senza","lemma":"senza","pos":"prep","gloss":"without","tier":"core","unit":7,"draft_list":true},{"id":"it.prep.contro","lemma":"contro","pos":"prep","gloss":"against","tier":"core","unit":7,"draft_list":true},{"id":"it.v.iniziare","lemma":"iniziare","pos":"v","gloss":"to begin","tier":"core","unit":8,"forms":{"pres.1sg":"inizio","pres.2sg":"inizi","pres.3sg":"inizia","pres.1pl":"iniziamo","pres.2pl":"iniziate","pres.3pl":"iniziano"}},{"id":"it.v.finire","lemma":"finire","pos":"v","gloss":"to finish","tier":"core","unit":8,"forms":{"pres.1sg":"finisco","pres.2sg":"finisci","pres.3sg":"finisce","pres.1pl":"finiamo","pres.2pl":"finite","pres.3pl":"finiscono"}},{"id":"it.v.cambiare","lemma":"cambiare","pos":"v","gloss":"to change","tier":"core","unit":8,"forms":{"pres.1sg":"cambio","pres.2sg":"cambi","pres.3sg":"cambia","pres.1pl":"cambiamo","pres.2pl":"cambiate","pres.3pl":"cambiano"}},{"id":"it.v.diventare","lemma":"diventare","pos":"v","gloss":"to become","tier":"core","unit":8,"forms":{"pres.1sg":"divento","pres.2sg":"diventi","pres.3sg":"diventa","pres.1pl":"diventiamo","pres.2pl":"diventate","pres.3pl":"diventano"}},{"id":"it.v.nascere","lemma":"nascere","pos":"v","gloss":"to be born","tier":"core","unit":8,"forms":{"pres.1sg":"nasco","pres.2sg":"nasci","pres.3sg":"nasce","pres.1pl":"nasciamo","pres.2pl":"nascete","pres.3pl":"nascono"}},{"id":"it.v.morire","lemma":"morire","pos":"v","gloss":"to die","tier":"core","unit":8,"forms":{"pres.1sg":"muoio","pres.2sg":"muori","pres.3sg":"muore","pres.1pl":"moriamo","pres.2pl":"morite","pres.3pl":"muoiono"}},{"id":"it.v.vivere","lemma":"vivere","pos":"v","gloss":"to live","tier":"core","unit":8,"forms":{"pres.1sg":"vivo","pres.2sg":"vivi","pres.3sg":"vive","pres.1pl":"viviamo","pres.2pl":"vivete","pres.3pl":"vivono"}},{"id":"it.v.passare","lemma":"passare","pos":"v","gloss":"to pass or spend (time)","tier":"core","unit":8,"forms":{"pres.1sg":"passo","pres.2sg":"passi","pres.3sg":"passa","pres.1pl":"passiamo","pres.2pl":"passate","pres.3pl":"passano"}},{"id":"it.v.aspettare","lemma":"aspettare","pos":"v","gloss":"to wait","tier":"core","unit":8,"forms":{"pres.1sg":"aspetto","pres.2sg":"aspetti","pres.3sg":"aspetta","pres.1pl":"aspettiamo","pres.2pl":"aspettate","pres.3pl":"aspettano"}},{"id":"it.v.incontrare","lemma":"incontrare","pos":"v","gloss":"to meet","tier":"core","unit":8,"forms":{"pres.1sg":"incontro","pres.2sg":"incontri","pres.3sg":"incontra","pres.1pl":"incontriamo","pres.2pl":"incontrate","pres.3pl":"incontrano"}},{"id":"it.prep.verso","lemma":"verso","pos":"prep","gloss":"toward","tier":"core","unit":8,"draft_list":true},{"id":"it.prep.dentro","lemma":"dentro","pos":"prep","gloss":"inside","tier":"core","unit":8,"draft_list":true},{"id":"it.v.leggere","lemma":"leggere","pos":"v","gloss":"to read","tier":"core","unit":9,"forms":{"pres.1sg":"leggo","pres.2sg":"leggi","pres.3sg":"legge","pres.1pl":"leggiamo","pres.2pl":"leggete","pres.3pl":"leggono"}},{"id":"it.v.scrivere","lemma":"scrivere","pos":"v","gloss":"to write","tier":"core","unit":9,"forms":{"pres.1sg":"scrivo","pres.2sg":"scrivi","pres.3sg":"scrive","pres.1pl":"scriviamo","pres.2pl":"scrivete","pres.3pl":"scrivono"}},{"id":"it.v.usare","lemma":"usare","pos":"v","gloss":"to use","tier":"core","unit":9,"forms":{"pres.1sg":"uso","pres.2sg":"usi","pres.3sg":"usa","pres.1pl":"usiamo","pres.2pl":"usate","pres.3pl":"usano"}},{"id":"it.v.servire","lemma":"servire","pos":"v","gloss":"to serve or be needed","tier":"core","unit":9,"forms":{"pres.1sg":"servo","pres.2sg":"servi","pres.3sg":"serve","pres.1pl":"serviamo","pres.2pl":"servite","pres.3pl":"servono"}},{"id":"it.v.seguire","lemma":"seguire","pos":"v","gloss":"to follow","tier":"core","unit":9,"forms":{"pres.1sg":"seguo","pres.2sg":"segui","pres.3sg":"segue","pres.1pl":"seguiamo","pres.2pl":"seguite","pres.3pl":"seguono"}},{"id":"it.v.aiutare","lemma":"aiutare","pos":"v","gloss":"to help","tier":"core","unit":9,"forms":{"pres.1sg":"aiuto","pres.2sg":"aiuti","pres.3sg":"aiuta","pres.1pl":"aiutiamo","pres.2pl":"aiutate","pres.3pl":"aiutano"}},{"id":"it.v.ricevere","lemma":"ricevere","pos":"v","gloss":"to receive","tier":"core","unit":9,"forms":{"pres.1sg":"ricevo","pres.2sg":"ricevi","pres.3sg":"riceve","pres.1pl":"riceviamo","pres.2pl":"ricevete","pres.3pl":"ricevono"}},{"id":"it.v.offrire","lemma":"offrire","pos":"v","gloss":"to offer","tier":"core","unit":9,"forms":{"pres.1sg":"offro","pres.2sg":"offri","pres.3sg":"offre","pres.1pl":"offriamo","pres.2pl":"offrite","pres.3pl":"offrono"}},{"id":"it.v.imparare","lemma":"imparare","pos":"v","gloss":"to learn","tier":"core","unit":9,"forms":{"pres.1sg":"imparo","pres.2sg":"impari","pres.3sg":"impara","pres.1pl":"impariamo","pres.2pl":"imparate","pres.3pl":"imparano"}},{"id":"it.v.decidere","lemma":"decidere","pos":"v","gloss":"to decide","tier":"core","unit":9,"forms":{"pres.1sg":"decido","pres.2sg":"decidi","pres.3sg":"decide","pres.1pl":"decidiamo","pres.2pl":"decidete","pres.3pl":"decidono"}},{"id":"it.prep.fuori","lemma":"fuori","pos":"prep","gloss":"outside","tier":"core","unit":9,"draft_list":true},{"id":"it.prep.davanti","lemma":"davanti","pos":"prep","gloss":"in front (of)","tier":"core","unit":9,"draft_list":true},{"id":"it.v.restare","lemma":"restare","pos":"v","gloss":"to stay behind","tier":"core","unit":10,"forms":{"pres.1sg":"resto","pres.2sg":"resti","pres.3sg":"resta","pres.1pl":"restiamo","pres.2pl":"restate","pres.3pl":"restano"}},{"id":"it.v.rimanere","lemma":"rimanere","pos":"v","gloss":"to remain","tier":"core","unit":10,"forms":{"pres.1sg":"rimango","pres.2sg":"rimani","pres.3sg":"rimane","pres.1pl":"rimaniamo","pres.2pl":"rimanete","pres.3pl":"rimangono"}},{"id":"it.v.lasciare","lemma":"lasciare","pos":"v","gloss":"to leave behind; to let","tier":"core","unit":10,"forms":{"pres.1sg":"lascio","pres.2sg":"lasci","pres.3sg":"lascia","pres.1pl":"lasciamo","pres.2pl":"lasciate","pres.3pl":"lasciano"}},{"id":"it.v.perdere","lemma":"perdere","pos":"v","gloss":"to lose","tier":"core","unit":10,"forms":{"pres.1sg":"perdo","pres.2sg":"perdi","pres.3sg":"perde","pres.1pl":"perdiamo","pres.2pl":"perdete","pres.3pl":"perdono"}},{"id":"it.v.vincere","lemma":"vincere","pos":"v","gloss":"to win","tier":"core","unit":10,"forms":{"pres.1sg":"vinco","pres.2sg":"vinci","pres.3sg":"vince","pres.1pl":"vinciamo","pres.2pl":"vincete","pres.3pl":"vincono"}},{"id":"it.v.scegliere","lemma":"scegliere","pos":"v","gloss":"to choose","tier":"core","unit":10,"forms":{"pres.1sg":"scelgo","pres.2sg":"scegli","pres.3sg":"sceglie","pres.1pl":"scegliamo","pres.2pl":"scegliete","pres.3pl":"scelgono"}},{"id":"it.v.togliere","lemma":"togliere","pos":"v","gloss":"to remove","tier":"core","unit":10,"forms":{"pres.1sg":"tolgo","pres.2sg":"togli","pres.3sg":"toglie","pres.1pl":"togliamo","pres.2pl":"togliete","pres.3pl":"tolgono"}},{"id":"it.v.sembrare","lemma":"sembrare","pos":"v","gloss":"to seem","tier":"core","unit":10,"forms":{"pres.1sg":"sembro","pres.2sg":"sembri","pres.3sg":"sembra","pres.1pl":"sembriamo","pres.2pl":"sembrate","pres.3pl":"sembrano"}},{"id":"it.v.cantare","lemma":"cantare","pos":"v","gloss":"to sing","tier":"core","unit":10,"forms":{"pres.1sg":"canto","pres.2sg":"canti","pres.3sg":"canta","pres.1pl":"cantiamo","pres.2pl":"cantate","pres.3pl":"cantano"}},{"id":"it.v.ballare","lemma":"ballare","pos":"v","gloss":"to dance","tier":"core","unit":10,"forms":{"pres.1sg":"ballo","pres.2sg":"balli","pres.3sg":"balla","pres.1pl":"balliamo","pres.2pl":"ballate","pres.3pl":"ballano"}},{"id":"it.prep.dietro","lemma":"dietro","pos":"prep","gloss":"behind","tier":"core","unit":10,"draft_list":true},{"id":"it.prep.vicino","lemma":"vicino","pos":"prep","gloss":"near; close (to)","tier":"core","unit":10,"draft_list":true}],"units":{"schema":1,"lang":"it","unlock":{"threshold":0.8,"of":"unit_words","count_hinted":false,"sequential":true},"note":"Units 2-10 have verbs and prepositions assigned; their support words and stories are still to be written.","units":[{"id":"it.u00","n":0,"title":"First words","after":null,"stage":"drafted","words":["it.intj.ciao","it.intj.buongiorno","it.intj.buonasera","it.intj.arrivederci","it.intj.grazie","it.intj.prego","it.phr.per_favore","it.intj.scusa","it.intj.si","it.intj.no","it.pron.io","it.pron.tu","it.pron.lui","it.pron.lei","it.pron.noi","it.pron.voi","it.pron.loro","it.conj.e","it.conj.ma","it.adv.non","it.adv.anche","it.adv.molto","it.adv.bene","it.adv.come","it.adv.dove","it.pron.chi","it.pron.cosa","it.art.il","it.art.la","it.art.un","it.art.una"],"story":null},{"id":"it.u01","n":1,"title":"Meeting someone","after":"it.u00","stage":"drafted","words":["it.v.essere","it.v.avere","it.v.stare","it.v.andare","it.v.venire","it.v.fare","it.v.volere","it.v.potere","it.v.dovere","it.v.dire","it.prep.di","it.prep.a","it.n.caffe","it.n.bar","it.n.casa","it.adv.oggi","it.adv.qui","it.adv.adesso","it.num.due"],"story":"it.s01"},{"id":"it.u02","n":2,"title":"Talking and understanding","after":"it.u01","stage":"outline","words":["it.v.parlare","it.v.chiamare","it.v.sapere","it.v.conoscere","it.v.capire","it.v.chiedere","it.v.rispondere","it.v.spiegare","it.v.ascoltare","it.v.sentire","it.prep.in","it.prep.da","it.art.lo","it.art.i","it.art.gli","it.art.le","it.art.uno"],"story":null},{"id":"it.u03","n":3,"title":"Seeing, thinking and giving","after":"it.u02","stage":"outline","words":["it.v.vedere","it.v.guardare","it.v.pensare","it.v.credere","it.v.dare","it.v.prendere","it.v.trovare","it.v.cercare","it.v.mettere","it.v.tenere","it.prep.con","it.prep.su"],"story":null},{"id":"it.u04","n":4,"title":"Moving around","after":"it.u03","stage":"outline","words":["it.v.arrivare","it.v.partire","it.v.tornare","it.v.entrare","it.v.uscire","it.v.camminare","it.v.guidare","it.v.viaggiare","it.v.salire","it.v.scendere","it.prep.per","it.prep.tra"],"story":null},{"id":"it.u05","n":5,"title":"Daily life","after":"it.u04","stage":"outline","words":["it.v.mangiare","it.v.bere","it.v.cucinare","it.v.dormire","it.v.lavorare","it.v.studiare","it.v.comprare","it.v.vendere","it.v.pagare","it.v.spendere","it.prep.dopo","it.prep.prima"],"story":null},{"id":"it.u06","n":6,"title":"Body and action","after":"it.u05","stage":"outline","words":["it.v.aprire","it.v.chiudere","it.v.portare","it.v.alzare","it.v.sedere","it.v.cadere","it.v.correre","it.v.nuotare","it.v.volare","it.v.giocare","it.prep.sopra","it.prep.sotto"],"story":null},{"id":"it.u07","n":7,"title":"Feelings and likes","after":"it.u06","stage":"outline","words":["it.v.amare","it.v.odiare","it.v.piacere","it.v.sperare","it.v.temere","it.v.ridere","it.v.piangere","it.v.provare","it.v.ricordare","it.v.dimenticare","it.prep.senza","it.prep.contro"],"story":null},{"id":"it.u08","n":8,"title":"Starting, finishing, changing","after":"it.u07","stage":"outline","words":["it.v.iniziare","it.v.finire","it.v.cambiare","it.v.diventare","it.v.nascere","it.v.morire","it.v.vivere","it.v.passare","it.v.aspettare","it.v.incontrare","it.prep.verso","it.prep.dentro"],"story":null},{"id":"it.u09","n":9,"title":"Reading, writing and using","after":"it.u08","stage":"outline","words":["it.v.leggere","it.v.scrivere","it.v.usare","it.v.servire","it.v.seguire","it.v.aiutare","it.v.ricevere","it.v.offrire","it.v.imparare","it.v.decidere","it.prep.fuori","it.prep.davanti"],"story":null},{"id":"it.u10","n":10,"title":"Staying, losing and choosing","after":"it.u09","stage":"outline","words":["it.v.restare","it.v.rimanere","it.v.lasciare","it.v.perdere","it.v.vincere","it.v.scegliere","it.v.togliere","it.v.sembrare","it.v.cantare","it.v.ballare","it.prep.dietro","it.prep.vicino"],"story":null}]},"stories":{"it.s01":{"schema":1,"id":"it.s01","lang":"it","unit":1,"status":"draft: needs native-speaker review","title":{"it":"Un caffè al bar","en":"A coffee at the bar"},"notes":["al = a + il ('at the'). Joined forms like this are taught later, in the prepositions section.","Speakers: null means narrator."],"lines":[{"speaker":null,"it":"[Marco|name] [è|it.v.essere:pres.3sg] [al|it.prep.a:+il] [bar|it.n.bar].","en":"Marco is at the bar."},{"speaker":null,"it":"[Giulia|name] [viene|it.v.venire:pres.3sg] [al|it.prep.a:+il] [bar|it.n.bar].","en":"Giulia comes to the bar."},{"speaker":"Marco","it":"«[Ciao|it.intj.ciao], [Giulia|name]! [Come|it.adv.come] [stai|it.v.stare:pres.2sg]?»","en":"\"Hi, Giulia! How are you?\""},{"speaker":"Giulia","it":"«[Bene|it.adv.bene], [grazie|it.intj.grazie]. [E|it.conj.e] [tu|it.pron.tu]?»","en":"\"Fine, thank you. And you?\""},{"speaker":"Marco","it":"«[Anche|it.adv.anche] [io|it.pron.io] [sto|it.v.stare:pres.1sg] [bene|it.adv.bene]. [Voglio|it.v.volere:pres.1sg] [un|it.art.un] [caffè|it.n.caffe]. [Vuoi|it.v.volere:pres.2sg] [un|it.art.un] [caffè|it.n.caffe]?»","en":"\"I'm fine too. I want a coffee. Do you want a coffee?\""},{"speaker":"Giulia","it":"«[Sì|it.intj.si], [grazie|it.intj.grazie]!»","en":"\"Yes, thank you!\""},{"speaker":null,"it":"[Marco|name] [dice|it.v.dire:pres.3sg]: «[Due|it.num.due] [caffè|it.n.caffe], [per favore|it.phr.per_favore]!»","en":"Marco says: \"Two coffees, please!\""},{"speaker":null,"it":"[Adesso|it.adv.adesso] [Marco|name] [e|it.conj.e] [Giulia|name] [hanno|it.v.avere:pres.3pl] [un|it.art.un] [caffè|it.n.caffe].","en":"Now Marco and Giulia both have a coffee."},{"speaker":"Marco","it":"«[Cosa|it.pron.cosa] [fai|it.v.fare:pres.2sg] [oggi|it.adv.oggi]?»","en":"\"What are you doing today?\""},{"speaker":"Giulia","it":"«[Oggi|it.adv.oggi] [non|it.adv.non] [posso|it.v.potere:pres.1sg] [stare|it.v.stare:inf] [qui|it.adv.qui]. [Devo|it.v.dovere:pres.1sg] [andare|it.v.andare:inf] [a|it.prep.a] [casa|it.n.casa].»","en":"\"Today I can't stay here. I have to go home.\""},{"speaker":"Marco","it":"«[Va|it.v.andare:pres.3sg] [bene|it.adv.bene]!»","en":"\"That's fine!\""},{"speaker":null,"it":"[Giulia|name] [dice|it.v.dire:pres.3sg]: «[Ciao|it.intj.ciao], [Marco|name]! [Grazie|it.intj.grazie]!»","en":"Giulia says: \"Bye, Marco! Thank you!\""},{"speaker":"Marco","it":"«[Prego|it.intj.prego]! [Arrivederci|it.intj.arrivederci]!»","en":"\"You're welcome! Goodbye!\""}]}}};
+let C={},fin=false;
+function setC(d){const L=Object.fromEntries(d.lex.map(e=>[e.id,e]));C={lex:d.lex,units:d.units.units,rule:d.units.unlock,stories:d.stories,L}}
+setC(CONTENT_EMBED);
+const J=p=>fetch(p).then(r=>r.ok?r.json():Promise.reject());
+async function loadContent(){
+  const l=await J("content/it/lexicon.json"),u=await J("content/it/units.json"),st={};
+  for(const x of u.units)if(x.story)st[x.story]=await J("content/it/stories/"+x.story+".json");
+  setC({lex:l.entries,units:u,stories:st});
+}
+const PERS=["pres.1sg","pres.2sg","pres.3sg","pres.1pl","pres.2pl","pres.3pl"];
+const PL={n:"noun",adv:"adverb",pron:"pronoun",art:"article",prep:"preposition",conj:"conjunction",num:"number",adj:"adjective"};
+const FORMD={pres:"present",inf:"dictionary form","1sg":"I","2sg":"you (sing.)","3sg":"he/she","1pl":"we","2pl":"you (pl.)","3pl":"they"};
+const isU=m=>typeof m==="string"&&m[0]==="u";
+const rnd=m=>(store("cv-rounds")||{})[m]||0;
+const seedOf=m=>isU(m)?"unit|"+m+"|"+rnd(m):(PUZZLE_SET==="v1"?"":PUZZLE_SET+":")+(m==="inf"?KEY:KEY+"|"+m);
+const subText=m=>isU(m)?"Unit "+m.slice(1)+" practice. Words you do not know yet come first.":m==="inf"?"Fill in the Italian infinitive for each English clue.":"Write the present-tense form for the person shown. Use the accent keys where needed (è, dà, può).";
+const clueOf=e=>{const g=e.gloss[0].toUpperCase()+e.gloss.slice(1);return e.pos==="v"?g:g+(PL[e.pos]?" ("+PL[e.pos]+")":"")};
+const unitWords=n=>C.units.find(u=>u.n===n).words.map(i=>C.L[i]).filter(e=>e&&e.puzzle!==false);
+function unitList(n){
+  const wk=store("cv-words")||{};
+  return unitWords(n).slice().sort((a,b)=>(wk[a.id]===2)-(wk[b.id]===2)).slice(0,16)
+    .map(e=>({word:e.lemma.replace(/ /g,"").toUpperCase(),clue:clueOf(e),id:e.id}));
+}
+/* A word counts as known (2) when solved without Hint; solved with Hint = learning (1). Stored by id, never by spelling. */
+function record(){
+  const wk=store("cv-words")||{};let ch=false;
+  entries.forEach(e=>{
+    if(!e.id||!e.cells.every(k=>cells[k].val===cells[k].ans))return;
+    const key=e.form&&e.form!=="inf"?e.id+":"+e.form:e.id,v=e.cells.some(k=>cells[k].hint)?1:2;
+    if((wk[key]||0)<v){wk[key]=v;ch=true}
+  });
+  if(ch)store("cv-words",wk);
+}
+function stat(n){const wk=store("cv-words")||{},ws=unitWords(n),k=ws.filter(e=>wk[e.id]===2).length;return{k,t:ws.length,ok:ws.length>0&&k/ws.length>=C.rule.threshold}}
+function learn(){
+  const box=$("units");box.innerHTML="";let K=0,T=0,prevOk=true;
+  C.units.forEach(u=>{
+    const s=stat(u.n),open=u.n===0||prevOk,storyOpen=!!u.story&&s.ok;K+=s.k;T+=s.t;
+    const d=document.createElement("div");d.className="unit"+(open?"":" lock");
+    d.innerHTML='<div class="ut"><b>Unit '+u.n+' \u00b7 '+u.title+'</b><small>'+s.k+' of '+s.t+' words known</small><i><span style="width:'+(s.t?Math.round(100*s.k/s.t):0)+'%"></span></i></div>';
+    const a=document.createElement("button");a.textContent=open?"Practice":"\ud83d\udd12";a.disabled=!open;a.onclick=()=>openUnit(u.n);
+    const b=document.createElement("button");b.textContent=u.story?(storyOpen?"Story":"\ud83d\udd12 Story"):"Story soon";b.disabled=!storyOpen;b.onclick=()=>openStory(u.story);
+    d.append(a,b);box.append(d);prevOk=s.ok;
+  });
+  $("lsum").textContent="Foundation words known: "+K+" of "+T+" so far. A story unlocks when "+Math.round(C.rule.threshold*100)+"% of its unit is known (words revealed with Hint do not count).";
+}
+function openUnit(n,adv){
+  const m="u"+n,R=store("cv-rounds")||{},F=store("cv-ufin")||{};
+  if(adv||F[m+"-"+(R[m]||0)]){R[m]=(R[m]||0)+1;store("cv-rounds",R)}
+  $("home").hidden=true;$("play").hidden=false;$("date").textContent="Unit "+n;
+  load(m);showStreak();window.scrollTo(0,0);
+}
+function unitDone(){if(fin)return;fin=true;const F=store("cv-ufin")||{};F[mode+"-"+rnd(mode)]=1;store("cv-ufin",F);$("again").hidden=false}
+function gloss(id,form,surf){
+  const e=C.L[id];if(!e)return;let x="";
+  if(form&&form[0]==="+")x=" ("+e.lemma+" + "+form.slice(1)+")";
+  else if(form&&form!=="inf"){const [t,p]=form.split(".");x=" ("+e.lemma+" \u00b7 "+FORMD[t]+", "+FORMD[p]+")"}
+  else if(e.lemma.toLowerCase()!==surf.toLowerCase())x=" ("+e.lemma+")";
+  $("sgloss").textContent=surf+" \u2014 "+e.gloss+x;
+}
+function openStory(id){
+  const s=C.stories[id];if(!s)return;
+  $("home").hidden=true;$("play").hidden=true;$("story").hidden=false;
+  $("stitle").textContent=s.title.it;$("sen").textContent=s.title.en;
+  const wk=store("cv-words")||{},box=$("slines");box.innerHTML="";
+  s.lines.forEach(ln=>{
+    const p=document.createElement("p");p.className="sl";
+    if(ln.speaker){const b=document.createElement("b");b.textContent=ln.speaker+": ";p.append(b)}
+    const re=/\[([^\[\]|]+)\|([^\[\]|:]+)(?::([^\[\]]+))?\]/g,t=ln.it;let last=0,m;
+    while((m=re.exec(t))){
+      if(m.index>last)p.append(t.slice(last,m.index));
+      const surf=m[1],wid=m[2],form=m[3];
+      if(wid==="name")p.append(surf);
+      else{const w=document.createElement("button");w.className="wd"+(wk[wid]===2?"":" nw");w.textContent=surf;w.onclick=()=>gloss(wid,form,surf);p.append(w)}
+      last=re.lastIndex;
+    }
+    if(last<t.length)p.append(t.slice(last));
+    const en=document.createElement("small");en.className="tr";en.hidden=true;en.textContent=ln.en;p.append(en);
+    box.append(p);
+  });
+  $("strans").textContent="Show translation";$("sgloss").textContent="Tap any word to see its meaning.";
+  window.scrollTo(0,0);
+}
+$("sback").onclick=home;
+$("strans").onclick=()=>{const sh=$("strans").textContent.startsWith("Show");document.querySelectorAll("#slines .tr").forEach(x=>x.hidden=!sh);$("strans").textContent=sh?"Hide translation":"Show translation"};
+$("again").onclick=()=>openUnit(+mode.slice(1),true);
+
+/* ---- Home screen, calendar, local profile ---- */
+const PUZZLE_SET="v1"; /* bump (e.g. "v2") only when you want brand-new puzzles for all dates */
+const LAUNCH="2026-11-01"; /* earliest date shown in the calendar */
+const MODES=["inf",0,1,2,3,4,5],WHO=["I","you (sing.)","he / she","we","you (pl.)","they"];
+const AVS=["🙂","😎","🦊","🐱","🐼","🦉","🌻","🍋","🍕","🚀","🎨","🏔️"];
+const DAYF={weekday:"long",day:"numeric",month:"long"};
+let calM=new Date(today.getFullYear(),today.getMonth(),1),pav="🙂";
+const pd=k=>{const [y,m,d]=k.split("-").map(Number);return new Date(y,m-1,d)};
+const prof=()=>store("cv-profile")||{name:"",av:"🙂"};
+const mlabel=m=>m==="inf"?"Infinitives":"Present tense · "+NAMES[m];
+function status(m,k){
+  if((store("cv-done-"+k)||[]).includes(m))return"done";
+  const p=store("cv-prog-"+k+(m==="inf"?"":"-"+m));
+  return p&&Object.keys(p).length?"prog":"new";
+}
+function home(){
+  $("play").hidden=true;$("story").hidden=true;$("home").hidden=false;
+  const p=prof(),h=today.getHours();
+  $("avatar").textContent=p.av;
+  $("hello").textContent=(h<12?"Buongiorno":h<18?"Buon pomeriggio":"Buonasera")+(p.name?", "+p.name:"")+"!";
+  $("hdate").textContent=today.toLocaleDateString(undefined,DAYF);
+  const s=store("cv-streak")||{};
+  $("st1").textContent=liveStreak();
+  $("st2").textContent=Math.max(s.best||0,s.n||0);
+  let tot=0;
+  try{for(let i=0;i<localStorage.length;i++){const k=localStorage.key(i);if(k.startsWith("cv-done-"))tot+=(JSON.parse(localStorage.getItem(k))||[]).length}}catch(e){}
+  $("st3").textContent=tot;
+  $("dayh").textContent=KEY===TODAY?"Today’s puzzles":"Puzzles for "+pd(KEY).toLocaleDateString(undefined,DAYF);
+  const c=$("cards");c.innerHTML="";
+  let first=null;
+  MODES.forEach(m=>{
+    const st=status(m,KEY),b=document.createElement("button");
+    b.className="card "+st;
+    b.innerHTML='<span class="ic">'+(m==="inf"?"-are":NAMES[m])+'</span><span class="tx"><b>'+mlabel(m)+'</b><small>'+(m==="inf"?"100 common verbs":"Subject: "+WHO[m])+'</small></span><span class="stt">'+({done:"✓ Done",prog:"Continue",new:"Play"})[st]+'</span>';
+    b.onclick=()=>openPuzzle(m);c.append(b);
+    if(first===null&&st!=="done")first=m;
+  });
+  const ct=$("cont");
+  ct.disabled=first===null;
+  ct.textContent=first===null?"All puzzles done for this day 🎉":(status(first,KEY)==="prog"?"Continue: ":"Start: ")+mlabel(first);
+  ct.onclick=()=>first!==null&&openPuzzle(first);
+  learn();cal();
+  window.scrollTo(0,0);
+}
+function openPuzzle(m){
+  $("home").hidden=true;$("play").hidden=false;
+  $("date").textContent=pd(KEY).toLocaleDateString(undefined,DAYF);
+  load(m);showStreak();window.scrollTo(0,0);
+}
+function cal(){
+  const y=calM.getFullYear(),mo=calM.getMonth(),lead=(new Date(y,mo,1).getDay()+6)%7,days=new Date(y,mo+1,0).getDate(),ym=fmt(calM).slice(0,7);
+  let h='<div class="ch"><button id="pm"'+(ym<=LAUNCH.slice(0,7)?" disabled":"")+'>‹</button><b>'+calM.toLocaleDateString(undefined,{month:"long",year:"numeric"})+'</b><button id="nm"'+(ym>=TODAY.slice(0,7)?" disabled":"")+'>›</button><button id="tdy">Today</button></div><div class="cg">';
+  "MTWTFSS".split("").forEach(x=>h+="<i>"+x+"</i>");
+  for(let i=0;i<lead;i++)h+="<span></span>";
+  for(let n=1;n<=days;n++){
+    const k=fmt(new Date(y,mo,n)),ok=k>=LAUNCH&&k<=TODAY,c=ok?(store("cv-done-"+k)||[]).length:0;
+    h+='<button class="d'+(k===KEY?" sel":"")+(k===TODAY?" td":"")+(c>=7?" full":c?" part":"")+'"'+(ok?' data-k="'+k+'"':" disabled")+'>'+n+(c?"<small>"+c+"/7</small>":"")+"</button>";
+  }
+  $("cal").innerHTML=h+"</div>";
+  $("pm").onclick=()=>{calM=new Date(y,mo-1,1);cal()};
+  $("nm").onclick=()=>{calM=new Date(y,mo+1,1);cal()};
+  $("tdy").onclick=()=>{KEY=TODAY;calM=new Date(today.getFullYear(),today.getMonth(),1);home()};
+  document.querySelectorAll("#cal [data-k]").forEach(b=>b.onclick=()=>{KEY=b.dataset.k;home()});
+}
+function avs(){
+  $("avs").innerHTML="";
+  AVS.forEach(a=>{const b=document.createElement("button");b.textContent=a;if(a===pav)b.className="on";b.onclick=()=>{pav=a;avs()};$("avs").append(b)});
+}
+$("avatar").onclick=()=>{const p=prof();$("pname").value=p.name;pav=p.av;$("prof").hidden=!$("prof").hidden;avs()};
+$("psave").onclick=()=>{store("cv-profile",{name:$("pname").value.trim(),av:pav});$("prof").hidden=true;home()};
+$("back").onclick=home;
+Promise.resolve().then(()=>fetch("italian_verbs.json")).then(r=>r.ok?r.json():null).then(d=>{if(valid(d))DATA=d}).catch(()=>{}).then(()=>loadContent()).catch(()=>{}).then(()=>{showStreak();keyboard();home()});
 </script>
 </body></html>
