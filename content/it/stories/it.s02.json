@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "it.s02",
+ "lang": "it",
+ "unit": 2,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Come ti chiami?",
+  "en": "What’s your name?"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [va|it.v.andare:pres.3sg] [da|it.prep.da] [Marco|name]. [Marco|name] [è|it.v.essere:pres.3sg] [in|it.prep.in] [casa|it.n.casa].",
+   "en": "Giulia goes to Marco’s. Marco is at home."
+  },
+  {
+   "speaker": null,
+   "it": "[Luca|name] [è|it.v.essere:pres.3sg] [un|it.art.un] [amico|it.n.amico] [di|it.prep.di] [Marco|name].",
+   "en": "Luca is a friend of Marco’s."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Ciao|it.intj.ciao]! [Mi|it.pron.mi] [chiamo|it.v.chiamare:pres.1sg] [Giulia|name]. [Come|it.adv.come] [ti|it.pron.ti] [chiami|it.v.chiamare:pres.2sg]?»",
+   "en": "“Hi! My name is Giulia. What’s your name?”"
+  },
+  {
+   "speaker": "Luca",
+   "it": "«[Mi|it.pron.mi] [chiamo|it.v.chiamare:pres.1sg] [Luca|name]. [Parlo|it.v.parlare:pres.1sg] [poco|it.adv.poco] [italiano|it.n.italiano].»",
+   "en": "“My name is Luca. I speak little Italian.”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Molto|it.adv.molto] [bene|it.adv.bene]! [Capisci|it.v.capire:pres.2sg] [tutto|it.pron.tutto]?»",
+   "en": "“Very good! Do you understand everything?”"
+  },
+  {
+   "speaker": "Luca",
+   "it": "«[No|it.intj.no], [non|it.adv.non] [capisco|it.v.capire:pres.1sg] [tutto|it.pron.tutto]. [Non|it.adv.non] [so|it.v.sapere:pres.1sg] [molto|it.adv.molto]. [E|it.conj.e] [non|it.adv.non] [sento|it.v.sentire:pres.1sg] [bene|it.adv.bene].»",
+   "en": "“No, I don’t understand everything. I don’t know much. And I can’t hear well.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Luca|name] [chiede|it.v.chiedere:pres.3sg]: «[Puoi|it.v.potere:pres.2sg] [parlare|it.v.parlare:inf] [piano|it.adv.piano], [per favore|it.phr.per_favore]?»",
+   "en": "Luca asks: “Can you speak slowly, please?”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [risponde|it.v.rispondere:pres.3sg]: «[Sì|it.intj.si], [certo|it.adv.certo].»",
+   "en": "Giulia answers: “Yes, of course.”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Conosci|it.v.conoscere:pres.2sg] [Roma|name]?»",
+   "en": "“Do you know Rome?”"
+  },
+  {
+   "speaker": "Luca",
+   "it": "«[No|it.intj.no], [non|it.adv.non] [conosco|it.v.conoscere:pres.1sg] [Roma|name].»",
+   "en": "“No, I don’t know Rome.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [spiega|it.v.spiegare:pres.3sg] [e|it.conj.e] [Luca|name] [ascolta|it.v.ascoltare:pres.3sg].",
+   "en": "Giulia explains and Luca listens."
+  },
+  {
+   "speaker": null,
+   "it": "[Adesso|it.adv.adesso] [Luca|name] [capisce|it.v.capire:pres.3sg].",
+   "en": "Now Luca understands."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Bravo|it.adj.bravo], [Luca|name]!»",
+   "en": "“Well done, Luca!”"
+  }
+ ]
+}

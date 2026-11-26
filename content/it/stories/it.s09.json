@@ -1,0 +1,88 @@
+{
+ "schema": 1,
+ "id": "it.s09",
+ "lang": "it",
+ "unit": 9,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Un libro nuovo",
+  "en": "A new book"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Marco|name] [è|it.v.essere:pres.3sg] [a|it.prep.a] [casa|it.n.casa]. [Marco|name] [riceve|it.v.ricevere:pres.3sg] [un|it.art.un] [messaggio|it.n.messaggio] [da|it.prep.da] [Giulia|name].",
+   "en": "Marco is at home. Marco receives a message from Giulia."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [scrive|it.v.scrivere:pres.3sg]: «[Ciao|it.intj.ciao], [Marco|name]! [Sono|it.v.essere:pres.1sg] [davanti|it.prep.davanti] [a|it.prep.a] [casa|it.n.casa]!»",
+   "en": "Giulia writes: “Hi, Marco! I’m in front of the house!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [legge|it.v.leggere:pres.3sg] [il|it.art.il] [messaggio|it.n.messaggio] [e|it.conj.e] [va|it.v.andare:pres.3sg] [fuori|it.prep.fuori].",
+   "en": "Marco reads the message and goes outside."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Ciao|it.intj.ciao], [Giulia|name]! [Ho|it.v.avere:pres.1sg] [un|it.art.un] [libro|it.n.libro] [nuovo|it.adj.nuovo]. [Vuoi|it.v.volere:pres.2sg] [leggere|it.v.leggere:inf]?»",
+   "en": "“Hi, Giulia! I have a new book. Do you want to read?”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sì|it.intj.si]! [Ma|it.conj.ma] [non|it.adv.non] [capisco|it.v.capire:pres.1sg] [tutto|it.pron.tutto].»",
+   "en": "“Yes! But I don’t understand everything.”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Ti|it.pron.ti] [aiuto|it.v.aiutare:pres.1sg] [io|it.pron.io]!»",
+   "en": "“I’ll help you!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [legge|it.v.leggere:pres.3sg] [e|it.conj.e] [Marco|name] [spiega|it.v.spiegare:pres.3sg].",
+   "en": "Giulia reads and Marco explains."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [impara|it.v.imparare:pres.3sg] [una|it.art.una] [parola|it.n.parola] [nuova|it.adj.nuovo:f].",
+   "en": "Giulia learns a new word."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Uso|it.v.usare:pres.1sg] [il|it.art.il] [telefono|it.n.telefono] [per|it.prep.per] [scrivere|it.v.scrivere:inf] [la|it.art.la] [parola|it.n.parola].»",
+   "en": "“I use the phone to write the word.”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Ti|it.pron.ti] [serve|it.v.servire:pres.3sg] [un|it.art.un] [caffè|it.n.caffe]?»",
+   "en": "“Do you need a coffee?”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sì|it.intj.si], [grazie|it.intj.grazie]!»",
+   "en": "“Yes, thank you!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [offre|it.v.offrire:pres.3sg] [un|it.art.un] [caffè|it.n.caffe] [a|it.prep.a] [Giulia|name].",
+   "en": "Marco offers Giulia a coffee."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Decidiamo|it.v.decidere:pres.1pl]: [studiamo|it.v.studiare:pres.1pl] [in|it.prep.in] [casa|it.n.casa]?»",
+   "en": "“Let’s decide: shall we study at home?”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [segue|it.v.seguire:pres.3sg] [Marco|name] [in|it.prep.in] [casa|it.n.casa].",
+   "en": "Giulia follows Marco into the house."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [e|it.conj.e] [Giulia|name] [siedono|it.v.sedere:pres.3pl] [davanti|it.prep.davanti] [al|it.prep.a:+il] [tavolo|it.n.tavolo].",
+   "en": "Marco and Giulia sit at the table."
+  }
+ ]
+}

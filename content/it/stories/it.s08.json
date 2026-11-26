@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "it.s08",
+ "lang": "it",
+ "unit": 8,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Al cinema",
+  "en": "At the cinema"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Marco|name] [aspetta|it.v.aspettare:pres.3sg] [Giulia|name] [al|it.prep.a:+il] [cinema|it.n.cinema].",
+   "en": "Marco waits for Giulia at the cinema."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [arriva|it.v.arrivare:pres.3sg].",
+   "en": "Giulia arrives."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Scusa|it.intj.scusa]! [Il|it.art.il] [film|it.n.film] [inizia|it.v.iniziare:pres.3sg] [adesso|it.adv.adesso]?»",
+   "en": "“Sorry! Does the film start now?”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[No|it.intj.no], [inizia|it.v.iniziare:pres.3sg] [tra|it.prep.tra] [due|it.num.due] [ore|it.n.ora:pl].»",
+   "en": "“No, it starts in two hours.”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Muoio|it.v.morire:pres.1sg] [di|it.prep.di] [fame|it.n.fame]! [Cosa|it.pron.cosa] [facciamo|it.v.fare:pres.1pl]?»",
+   "en": "“I’m starving! What shall we do?”"
+  },
+  {
+   "speaker": null,
+   "it": "[Nasce|it.v.nascere:pres.3sg] [una|it.art.una] [nuova|it.adj.nuovo:f] [idea|it.n.idea].",
+   "en": "A new idea is born."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Cambiamo|it.v.cambiare:pres.1pl] [idea|it.n.idea]! [Andiamo|it.v.andare:pres.1pl] [al|it.prep.a:+il] [bar|it.n.bar]!»",
+   "en": "“Let’s change plans! Let’s go to the bar!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [e|it.conj.e] [Giulia|name] [vanno|it.v.andare:pres.3pl] [al|it.prep.a:+il] [bar|it.n.bar]. [Al|it.prep.a:+il] [bar|it.n.bar] [incontrano|it.v.incontrare:pres.3pl] [un|it.art.un] [amico|it.n.amico] [di|it.prep.di] [Marco|name]. [Lui|it.pron.lui] [vive|it.v.vivere:pres.3sg] [a|it.prep.a] [Milano|name].",
+   "en": "Marco and Giulia go to the bar. At the bar they meet a friend of Marco’s. He lives in Milan."
+  },
+  {
+   "speaker": null,
+   "it": "[Il|it.art.il] [tempo|it.n.tempo] [passa|it.v.passare:pres.3sg]. [Il|it.art.il] [caffè|it.n.caffe] [diventa|it.v.diventare:pres.3sg] [freddo|it.adj.freddo].",
+   "en": "Time passes. The coffee gets cold."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Finisco|it.v.finire:pres.1sg] [il|it.art.il] [caffè|it.n.caffe]. [Poi|it.adv.poi] [andiamo|it.v.andare:pres.1pl] [verso|it.prep.verso] [il|it.art.il] [cinema|it.n.cinema].»",
+   "en": "“I’ll finish the coffee. Then we’ll go towards the cinema.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [e|it.conj.e] [Giulia|name] [vanno|it.v.andare:pres.3pl] [verso|it.prep.verso] [il|it.art.il] [cinema|it.n.cinema]. [Dentro|it.prep.dentro] [il|it.art.il] [cinema|it.n.cinema] [il|it.art.il] [film|it.n.film] [inizia|it.v.iniziare:pres.3sg].",
+   "en": "Marco and Giulia go towards the cinema. Inside the cinema the film starts."
+  }
+ ]
+}

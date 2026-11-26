@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "it.s04",
+ "lang": "it",
+ "unit": 4,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Il treno per Milano",
+  "en": "The train to Milan"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [esce|it.v.uscire:pres.3sg] [di|it.prep.di] [casa|it.n.casa].",
+   "en": "Giulia leaves the house."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [guida|it.v.guidare:pres.3sg] [la|it.art.la] [macchina|it.n.macchina]. [Marco|name] [e|it.conj.e] [Giulia|name] [vanno|it.v.andare:pres.3pl] [alla|it.prep.a:+la] [stazione|it.n.stazione].",
+   "en": "Marco drives the car. Marco and Giulia go to the station."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [entra|it.v.entrare:pres.3sg] [nella|it.prep.in:+la] [stazione|it.n.stazione].",
+   "en": "Giulia goes into the station."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Ciao|it.intj.ciao], [Marco|name]! [Grazie|it.intj.grazie]!»",
+   "en": "“Bye, Marco! Thank you!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Prego|it.intj.prego]! [Arrivederci|it.intj.arrivederci]!»",
+   "en": "“You’re welcome! Goodbye!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [sale|it.v.salire:pres.3sg] [sul|it.prep.su:+il] [treno|it.n.treno]. [Giulia|name] [viaggia|it.v.viaggiare:pres.3sg] [in|it.prep.in] [treno|it.n.treno].",
+   "en": "Giulia gets on the train. Giulia travels by train."
+  },
+  {
+   "speaker": null,
+   "it": "[Il|it.art.il] [treno|it.n.treno] [parte|it.v.partire:pres.3sg] [per|it.prep.per] [Milano|name].",
+   "en": "The train leaves for Milan."
+  },
+  {
+   "speaker": null,
+   "it": "[Tra|it.prep.tra] [due|it.num.due] [ore|it.n.ora:pl] [il|it.art.il] [treno|it.n.treno] [arriva|it.v.arrivare:pres.3sg] [a|it.prep.a] [Milano|name].",
+   "en": "In two hours the train arrives in Milan."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [scende|it.v.scendere:pres.3sg] [dal|it.prep.da:+il] [treno|it.n.treno].",
+   "en": "Giulia gets off the train."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [cammina|it.v.camminare:pres.3sg] [per|it.prep.per] [Milano|name].",
+   "en": "Giulia walks around Milan."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Marco|name], [sono|it.v.essere:pres.1sg] [a|it.prep.a] [Milano|name]! [Torno|it.v.tornare:pres.1sg] [a|it.prep.a] [casa|it.n.casa] [tra|it.prep.tra] [due|it.num.due] [giorni|it.n.giorno:pl]!»",
+   "en": "“Marco, I’m in Milan! I’m coming home in two days!”"
+  }
+ ]
+}

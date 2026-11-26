@@ -1,0 +1,78 @@
+{
+ "schema": 1,
+ "id": "it.s06",
+ "lang": "it",
+ "unit": 6,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Al parco",
+  "en": "At the park"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Oggi|it.adv.oggi] [Marco|name] [e|it.conj.e] [Giulia|name] [vanno|it.v.andare:pres.3pl] [al|it.prep.a:+il] [parco|it.n.parco].",
+   "en": "Today Marco and Giulia go to the park."
+  },
+  {
+   "speaker": null,
+   "it": "[Un|it.art.un] [bambino|it.n.bambino] [gioca|it.v.giocare:pres.3sg] [con|it.prep.con] [una|it.art.una] [palla|it.n.palla].",
+   "en": "A child plays with a ball."
+  },
+  {
+   "speaker": null,
+   "it": "[Il|it.art.il] [bambino|it.n.bambino] [corre|it.v.correre:pres.3sg] [e|it.conj.e] [la|it.art.la] [palla|it.n.palla] [cade|it.v.cadere:pres.3sg] [sotto|it.prep.sotto] [una|it.art.una] [panchina|it.n.panchina].",
+   "en": "The child runs and the ball falls under a bench."
+  },
+  {
+   "speaker": "Il bambino",
+   "it": "«[La|it.art.la] [palla|it.n.palla]! [La|it.art.la] [palla|it.n.palla]!»",
+   "en": "“The ball! The ball!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [porta|it.v.portare:pres.3sg] [la|it.art.la] [palla|it.n.palla] [al|it.prep.a:+il] [bambino|it.n.bambino].",
+   "en": "Giulia brings the ball to the child."
+  },
+  {
+   "speaker": "Il bambino",
+   "it": "«[Grazie|it.intj.grazie]!»",
+   "en": "“Thank you!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [e|it.conj.e] [Giulia|name] [siedono|it.v.sedere:pres.3pl] [su|it.prep.su] [una|it.art.una] [panchina|it.n.panchina].",
+   "en": "Marco and Giulia sit on a bench."
+  },
+  {
+   "speaker": null,
+   "it": "[Un|it.art.un] [uccello|it.n.uccello] [vola|it.v.volare:pres.3sg] [sopra|it.prep.sopra] [il|it.art.il] [parco|it.n.parco].",
+   "en": "A bird flies over the park."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [apre|it.v.aprire:pres.3sg] [la|it.art.la] [borsa|it.n.borsa] [e|it.conj.e] [prende|it.v.prendere:pres.3sg] [acqua|it.n.acqua].",
+   "en": "Marco opens the bag and takes some water."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [chiude|it.v.chiudere:pres.3sg] [la|it.art.la] [borsa|it.n.borsa] [e|it.conj.e] [beve|it.v.bere:pres.3sg] [acqua|it.n.acqua].",
+   "en": "Marco closes the bag and drinks water."
+  },
+  {
+   "speaker": null,
+   "it": "[Il|it.art.il] [bambino|it.n.bambino] [alza|it.v.alzare:pres.3sg] [la|it.art.la] [mano|it.n.mano] [e|it.conj.e] [dice|it.v.dire:pres.3sg]: «[Ciao|it.intj.ciao]!»",
+   "en": "The child raises his hand and says: “Bye!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Domani|it.adv.domani] [andiamo|it.v.andare:pres.1pl] [al|it.prep.a:+il] [mare|it.n.mare]. [Tu|it.pron.tu] [nuoti|it.v.nuotare:pres.2sg]?»",
+   "en": "“Tomorrow we’re going to the sea. Do you swim?”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Sì|it.intj.si], [nuoto|it.v.nuotare:pres.1sg] [molto|it.adv.molto] [bene|it.adv.bene]!»",
+   "en": "“Yes, I swim very well!”"
+  }
+ ]
+}

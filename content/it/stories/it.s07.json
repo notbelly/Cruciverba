@@ -1,0 +1,93 @@
+{
+ "schema": 1,
+ "id": "it.s07",
+ "lang": "it",
+ "unit": 7,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Un film triste",
+  "en": "A sad film"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [è|it.v.essere:pres.3sg] [a|it.prep.a] [casa|it.n.casa] [di|it.prep.di] [Marco|name]. [Marco|name] [e|it.conj.e] [Giulia|name] [guardano|it.v.guardare:pres.3pl] [un|it.art.un] [film|it.n.film].",
+   "en": "Giulia is at Marco’s house. Marco and Giulia are watching a film."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Ti|it.pron.ti] [piace|it.v.piacere:pres.3sg] [il|it.art.il] [film|it.n.film]?»",
+   "en": "“Do you like the film?”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sì|it.intj.si], [mi|it.pron.mi] [piace|it.v.piacere:pres.3sg] [molto|it.adv.molto]!»",
+   "en": "“Yes, I like it a lot!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Nel|it.prep.in:+il] [film|it.n.film] [un|it.art.un] [uomo|it.n.uomo] [ama|it.v.amare:pres.3sg] [una|it.art.una] [donna|it.n.donna], [ma|it.conj.ma] [lei|it.pron.lei] [non|it.adv.non] [ama|it.v.amare:pres.3sg] [lui|it.pron.lui].",
+   "en": "In the film a man loves a woman, but she doesn’t love him."
+  },
+  {
+   "speaker": null,
+   "it": "[Lui|it.pron.lui] [piange|it.v.piangere:pres.3sg] [e|it.conj.e] [Giulia|name] [piange|it.v.piangere:pres.3sg].",
+   "en": "He cries and Giulia cries."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Perché|it.adv.perche] [piangi|it.v.piangere:pres.2sg]? [Io|it.pron.io] [odio|it.v.odiare:pres.1sg] [i|it.art.i] [film|it.n.film] [tristi|it.adj.triste:pl]!»",
+   "en": "“Why are you crying? I hate sad films!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sono|it.v.essere:pres.1sg] [triste|it.adj.triste] [per|it.prep.per] [lui|it.pron.lui].»",
+   "en": "“I’m sad for him.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [ride|it.v.ridere:pres.3sg], [ma|it.conj.ma] [Giulia|name] [non|it.adv.non] [ride|it.v.ridere:pres.3sg].",
+   "en": "Marco laughs, but Giulia doesn’t laugh."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Non|it.adv.non] [ridere|it.v.ridere:inf], [Marco|name]!»",
+   "en": "“Don’t laugh, Marco!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Scusa|it.intj.scusa]! [Temo|it.v.temere:pres.1sg] [i|it.art.i] [film|it.n.film] [tristi|it.adj.triste:pl] [e|it.conj.e] [rido|it.v.ridere:pres.1sg].»",
+   "en": "“Sorry! I fear sad films and I laugh.”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Dopo|it.prep.dopo] [il|it.art.il] [film|it.n.film] [dimentico|it.v.dimenticare:pres.1sg] [tutto|it.pron.tutto]!»",
+   "en": "“After the film I forget everything!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Io|it.pron.io] [ricordo|it.v.ricordare:pres.1sg] [tutto|it.pron.tutto]!»",
+   "en": "“I remember everything!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Domani|it.adv.domani] [spero|it.v.sperare:pres.1sg] [di|it.prep.di] [vedere|it.v.vedere:inf] [un|it.art.un] [film|it.n.film] [felice|it.adj.felice]!»",
+   "en": "“Tomorrow I hope to see a happy film!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Va|it.v.andare:pres.3sg] [bene|it.adv.bene]! [Provo|it.v.provare:pres.1sg] [io|it.pron.io]. [Ma|it.conj.ma] [sono|it.v.essere:pres.1sg] [contro|it.prep.contro] [i|it.art.i] [film|it.n.film] [tristi|it.adj.triste:pl]!»",
+   "en": "“OK! I’ll try. But I’m against sad films!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Senza|it.prep.senza] [ridere|it.v.ridere:inf]?»",
+   "en": "“Without laughing?”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Senza|it.prep.senza] [ridere|it.v.ridere:inf]!»",
+   "en": "“Without laughing!”"
+  }
+ ]
+}

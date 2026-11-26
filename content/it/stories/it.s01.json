@@ -1,0 +1,82 @@
+{
+ "schema": 1,
+ "id": "it.s01",
+ "lang": "it",
+ "unit": 1,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Un caffè al bar",
+  "en": "A coffee at the bar"
+ },
+ "notes": [
+  "al = a + il ('at the'). Joined forms like this are taught later, in the prepositions section.",
+  "Speakers: null means narrator."
+ ],
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Marco|name] [è|it.v.essere:pres.3sg] [al|it.prep.a:+il] [bar|it.n.bar].",
+   "en": "Marco is at the bar."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [viene|it.v.venire:pres.3sg] [al|it.prep.a:+il] [bar|it.n.bar].",
+   "en": "Giulia comes to the bar."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Ciao|it.intj.ciao], [Giulia|name]! [Come|it.adv.come] [stai|it.v.stare:pres.2sg]?»",
+   "en": "\"Hi, Giulia! How are you?\""
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Bene|it.adv.bene], [grazie|it.intj.grazie]. [E|it.conj.e] [tu|it.pron.tu]?»",
+   "en": "\"Fine, thank you. And you?\""
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Anche|it.adv.anche] [io|it.pron.io] [sto|it.v.stare:pres.1sg] [bene|it.adv.bene]. [Voglio|it.v.volere:pres.1sg] [un|it.art.un] [caffè|it.n.caffe]. [Vuoi|it.v.volere:pres.2sg] [un|it.art.un] [caffè|it.n.caffe]?»",
+   "en": "\"I'm fine too. I want a coffee. Do you want a coffee?\""
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sì|it.intj.si], [grazie|it.intj.grazie]!»",
+   "en": "\"Yes, thank you!\""
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [dice|it.v.dire:pres.3sg]: «[Due|it.num.due] [caffè|it.n.caffe], [per favore|it.phr.per_favore]!»",
+   "en": "Marco says: \"Two coffees, please!\""
+  },
+  {
+   "speaker": null,
+   "it": "[Adesso|it.adv.adesso] [Marco|name] [e|it.conj.e] [Giulia|name] [hanno|it.v.avere:pres.3pl] [un|it.art.un] [caffè|it.n.caffe].",
+   "en": "Now Marco and Giulia both have a coffee."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Cosa|it.pron.cosa] [fai|it.v.fare:pres.2sg] [oggi|it.adv.oggi]?»",
+   "en": "\"What are you doing today?\""
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Oggi|it.adv.oggi] [non|it.adv.non] [posso|it.v.potere:pres.1sg] [stare|it.v.stare:inf] [qui|it.adv.qui]. [Devo|it.v.dovere:pres.1sg] [andare|it.v.andare:inf] [a|it.prep.a] [casa|it.n.casa].»",
+   "en": "\"Today I can't stay here. I have to go home.\""
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Va|it.v.andare:pres.3sg] [bene|it.adv.bene]!»",
+   "en": "\"That's fine!\""
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [dice|it.v.dire:pres.3sg]: «[Ciao|it.intj.ciao], [Marco|name]! [Grazie|it.intj.grazie]!»",
+   "en": "Giulia says: \"Bye, Marco! Thank you!\""
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Prego|it.intj.prego]! [Arrivederci|it.intj.arrivederci]!»",
+   "en": "\"You're welcome! Goodbye!\""
+  }
+ ]
+}

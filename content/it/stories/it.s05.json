@@ -1,0 +1,73 @@
+{
+ "schema": 1,
+ "id": "it.s05",
+ "lang": "it",
+ "unit": 5,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "La pasta di Marco",
+  "en": "Marco’s pasta"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Oggi|it.adv.oggi] [Marco|name] [non|it.adv.non] [lavora|it.v.lavorare:pres.3sg]. [Marco|name] [va|it.v.andare:pres.3sg] [al|it.prep.a:+il] [mercato|it.n.mercato].",
+   "en": "Today Marco isn’t working. Marco goes to the market."
+  },
+  {
+   "speaker": null,
+   "it": "[Al|it.prep.a:+il] [mercato|it.n.mercato] [un|it.art.un] [uomo|it.n.uomo] [vende|it.v.vendere:pres.3sg] [la|it.art.la] [pasta|it.n.pasta] [e|it.conj.e] [il|it.art.il] [pane|it.n.pane].",
+   "en": "At the market a man sells pasta and bread."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [compra|it.v.comprare:pres.3sg] [la|it.art.la] [pasta|it.n.pasta] [e|it.conj.e] [il|it.art.il] [pane|it.n.pane]. [Marco|name] [paga|it.v.pagare:pres.3sg].",
+   "en": "Marco buys the pasta and the bread. Marco pays."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Spendo|it.v.spendere:pres.1sg] [poco|it.adv.poco]!»",
+   "en": "“I’m spending little!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [torna|it.v.tornare:pres.3sg] [a|it.prep.a] [casa|it.n.casa] [e|it.conj.e] [cucina|it.v.cucinare:pres.3sg] [la|it.art.la] [pasta|it.n.pasta].",
+   "en": "Marco goes home and cooks the pasta."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [viene|it.v.venire:pres.3sg] [da|it.prep.da] [Marco|name].",
+   "en": "Giulia comes to Marco’s."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Cosa|it.pron.cosa] [cucini|it.v.cucinare:pres.2sg]?»",
+   "en": "“What are you cooking?”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Cucino|it.v.cucinare:pres.1sg] [la|it.art.la] [pasta|it.n.pasta]. [Vuoi|it.v.volere:pres.2sg] [mangiare|it.v.mangiare:inf]?»",
+   "en": "“I’m cooking pasta. Do you want to eat?”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Sì|it.intj.si], [grazie|it.intj.grazie]! [Prima|it.prep.prima] [mangio|it.v.mangiare:pres.1sg], [dopo|it.prep.dopo] [studio|it.v.studiare:pres.1sg].»",
+   "en": "“Yes, thanks! First I eat, then I study.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [e|it.conj.e] [Giulia|name] [mangiano|it.v.mangiare:pres.3pl] [la|it.art.la] [pasta|it.n.pasta] [e|it.conj.e] [bevono|it.v.bere:pres.3pl] [acqua|it.n.acqua].",
+   "en": "Marco and Giulia eat the pasta and drink water."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Molto|it.adv.molto] [buona|it.adj.buono:f]!»",
+   "en": "“Very good!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Dopo|it.prep.dopo] [la|it.art.la] [pasta|it.n.pasta], [Giulia|name] [studia|it.v.studiare:pres.3sg] [e|it.conj.e] [Marco|name] [dorme|it.v.dormire:pres.3sg].",
+   "en": "After the pasta, Giulia studies and Marco sleeps."
+  }
+ ]
+}

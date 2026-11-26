@@ -1,0 +1,83 @@
+{
+ "schema": 1,
+ "id": "it.s10",
+ "lang": "it",
+ "unit": 10,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "La festa",
+  "en": "The party"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Oggi|it.adv.oggi] [Marco|name] [e|it.conj.e] [Giulia|name] [sono|it.v.essere:pres.3pl] [a|it.prep.a] [una|it.art.una] [festa|it.n.festa].",
+   "en": "Today Marco and Giulia are at a party."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [lascia|it.v.lasciare:pres.3sg] [la|it.art.la] [borsa|it.n.borsa] [dietro|it.prep.dietro] [una|it.art.una] [sedia|it.n.sedia].",
+   "en": "Giulia leaves her bag behind a chair."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [toglie|it.v.togliere:pres.3sg] [la|it.art.la] [giacca|it.n.giacca].",
+   "en": "Marco takes off his jacket."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [sceglie|it.v.scegliere:pres.3sg] [la|it.art.la] [musica|it.n.musica].",
+   "en": "Giulia chooses the music."
+  },
+  {
+   "speaker": null,
+   "it": "[La|it.art.la] [musica|it.n.musica] [inizia|it.v.iniziare:pres.3sg]. [Marco|name] [canta|it.v.cantare:pres.3sg] [e|it.conj.e] [Giulia|name] [balla|it.v.ballare:pres.3sg].",
+   "en": "The music starts. Marco sings and Giulia dances."
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [è|it.v.essere:pres.3sg] [vicino|it.prep.vicino] [a|it.prep.a] [Giulia|name].",
+   "en": "Marco is next to Giulia."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Marco|name], [sembri|it.v.sembrare:pres.2sg] [felice|it.adj.felice]!»",
+   "en": "“Marco, you seem happy!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Sì|it.intj.si], [molto|it.adv.molto] [felice|it.adj.felice]!»",
+   "en": "“Yes, very happy!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Una|it.art.una] [gara|it.n.gara] [inizia|it.v.iniziare:pres.3sg]. [Marco|name] [e|it.conj.e] [Giulia|name] [ballano|it.v.ballare:pres.3pl].",
+   "en": "A contest begins. Marco and Giulia dance."
+  },
+  {
+   "speaker": null,
+   "it": "[Un|it.art.un] [amico|it.n.amico] [di|it.prep.di] [Marco|name] [perde|it.v.perdere:pres.3sg], [ma|it.conj.ma] [Marco|name] [e|it.conj.e] [Giulia|name] [vincono|it.v.vincere:pres.3pl]!",
+   "en": "A friend of Marco’s loses, but Marco and Giulia win!"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Vinciamo|it.v.vincere:pres.1pl]!»",
+   "en": "“We win!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Brava|it.adj.bravo:f], [Giulia|name]!»",
+   "en": "“Well done, Giulia!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Io|it.pron.io] [resto|it.v.restare:pres.1sg] [qui|it.adv.qui]! [Non|it.adv.non] [torno|it.v.tornare:pres.1sg] [a|it.prep.a] [casa|it.n.casa]!»",
+   "en": "“I’m staying here! I’m not going home!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Anche|it.adv.anche] [io|it.pron.io] [rimango|it.v.rimanere:pres.1sg] [qui|it.adv.qui]!»",
+   "en": "“I’m staying here too!”"
+  }
+ ]
+}

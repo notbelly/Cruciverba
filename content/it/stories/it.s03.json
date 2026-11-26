@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "id": "it.s03",
+ "lang": "it",
+ "unit": 3,
+ "status": "draft: needs native-speaker review",
+ "title": {
+  "it": "Le chiavi di Marco",
+  "en": "Marco’s keys"
+ },
+ "lines": [
+  {
+   "speaker": null,
+   "it": "[Marco|name] [è|it.v.essere:pres.3sg] [in|it.prep.in] [casa|it.n.casa]. [Marco|name] [cerca|it.v.cercare:pres.3sg] [le|it.art.le] [chiavi|it.n.chiave:pl].",
+   "en": "Marco is at home. Marco is looking for the keys."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Dove|it.adv.dove] [sono|it.v.essere:pres.3pl] [le|it.art.le] [chiavi|it.n.chiave:pl]? [Non|it.adv.non] [vedo|it.v.vedere:pres.1sg] [le|it.art.le] [chiavi|it.n.chiave:pl]!»",
+   "en": "“Where are the keys? I can’t see the keys!”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Cosa|it.pron.cosa] [cerchi|it.v.cercare:pres.2sg]?»",
+   "en": "“What are you looking for?”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Cerco|it.v.cercare:pres.1sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [di|it.prep.di] [casa|it.n.casa].»",
+   "en": "“I’m looking for the house keys.”"
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Guardo|it.v.guardare:pres.1sg] [io|it.pron.io]! [Guardo|it.v.guardare:pres.1sg] [sul|it.prep.su:+il] [tavolo|it.n.tavolo].»",
+   "en": "“I’ll look! I’ll look on the table.”"
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [trova|it.v.trovare:pres.3sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [con|it.prep.con] [il|it.art.il] [telefono|it.n.telefono].",
+   "en": "Giulia finds the keys with the phone."
+  },
+  {
+   "speaker": null,
+   "it": "[Giulia|name] [prende|it.v.prendere:pres.3sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [e|it.conj.e] [dà|it.v.dare:pres.3sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [a|it.prep.a] [Marco|name].",
+   "en": "Giulia takes the keys and gives the keys to Marco."
+  },
+  {
+   "speaker": "Giulia",
+   "it": "«[Marco|name], [tu|it.pron.tu] [pensi|it.v.pensare:pres.2sg] [molto|it.adv.molto], [ma|it.conj.ma] [non|it.adv.non] [vedi|it.v.vedere:pres.2sg]!»",
+   "en": "“Marco, you think a lot, but you don’t see!”"
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Credo|it.v.credere:pres.1sg] [di|it.prep.di] [sì|it.intj.si]! [Grazie|it.intj.grazie]!»",
+   "en": "“I think so! Thank you!”"
+  },
+  {
+   "speaker": null,
+   "it": "[Marco|name] [mette|it.v.mettere:pres.3sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [in|it.prep.in] [tasca|it.n.tasca].",
+   "en": "Marco puts the keys in his pocket."
+  },
+  {
+   "speaker": "Marco",
+   "it": "«[Tengo|it.v.tenere:pres.1sg] [le|it.art.le] [chiavi|it.n.chiave:pl] [qui|it.adv.qui]!»",
+   "en": "“I’m keeping the keys here!”"
+  }
+ ]
+}
